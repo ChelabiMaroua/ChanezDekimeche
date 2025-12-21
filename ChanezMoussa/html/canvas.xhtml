@@ -10,97 +10,6 @@
     <title>Canvas Logo | Sport Algérien</title>
     
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
-    <style type="text/css">
-        .canvas-section {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            border: 1px solid #dee2e6;
-        }
-        
-        .canvas-wrapper {
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        #logoCanvas {
-            border: 3px solid #006233;
-            background: white;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        .controls {
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        .btn-canvas {
-            padding: 10px 20px;
-            margin: 5px;
-            background: #006233;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        
-        .btn-canvas:hover {
-            background: #004d29;
-        }
-        
-        .explanation {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #006233;
-        }
-        
-        .code-block {
-            background: #f1f3f5;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: monospace;
-            margin: 10px 0;
-            overflow-x: auto;
-            border-left: 3px solid #006233;
-        }
-        
-        .color-box {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin: 0 5px;
-            border: 1px solid #ccc;
-            vertical-align: middle;
-        }
-        
-        .step {
-            margin: 25px 0;
-            padding-bottom: 25px;
-            border-bottom: 1px dashed #dee2e6;
-        }
-        
-        .step:last-child {
-            border-bottom: none;
-        }
-        
-        .step-number {
-            background: #006233;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: inline-block;
-            text-align: center;
-            line-height: 30px;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <div class="site-header">
@@ -154,7 +63,7 @@
                 <!-- Canvas Section -->
                 <div class="canvas-section fade-in">
                     <div class="section-header">
-                        <h3>Logo &quot;Sport Algérien&quot;</h3>
+                        <h3>Logo "Sport Algérien"</h3>
                         <p>Représentation graphique des valeurs sportives</p>
                     </div>
 
@@ -164,17 +73,6 @@
                             Utilisez Firefox, Chrome ou Opera pour voir ce contenu.
                         </canvas>
                         
-                        <div class="controls">
-                            <button class="btn-canvas" onclick="drawLogo();" id="drawBtn">
-                                Dessiner le Logo
-                            </button>
-                            <button class="btn-canvas" onclick="clearCanvas();" id="clearBtn">
-                                Effacer le Canvas
-                            </button>
-                            <button class="btn-canvas" onclick="animateLogo();" id="animateBtn">
-                                Animation du Logo
-                            </button>
-                        </div>
                     </div>
 
                     <div style="text-align: center; margin-top: 15px;">
@@ -197,13 +95,13 @@
                     <div class="step">
                         <div class="step-number">1</div>
                         <span style="font-weight: bold; color: #006233;">Initialisation du Canvas</span>
-                        <div style="margin-left: 40px; margin-top: 10px;">
+                        <div class="indent">
                             <p>Création du contexte 2D et définition des dimensions.</p>
                             <div class="code-block">
-                                var canvas = document.getElementById('logoCanvas');<br />
-                                var ctx = canvas.getContext('2d');<br />
-                                canvas.width = 400;<br />
-                                canvas.height = 300;
+                                <span class="code-line">var canvas = document.getElementById('logoCanvas');</span>
+                                <span class="code-line">var ctx = canvas.getContext('2d');</span>
+                                <span class="code-line">canvas.width = 400;</span>
+                                <span class="code-line">canvas.height = 300;</span>
                             </div>
                         </div>
                     </div>
@@ -211,14 +109,14 @@
                     <div class="step">
                         <div class="step-number">2</div>
                         <span style="font-weight: bold; color: #006233;">Fond avec dégradé</span>
-                        <div style="margin-left: 40px; margin-top: 10px;">
+                        <div class="indent">
                             <p>Création d'un fond vert avec dégradé linéaire.</p>
                             <div class="code-block">
-                                var gradient = ctx.createLinearGradient(0, 0, 400, 300);<br />
-                                gradient.addColorStop(0, '#006233');<br />
-                                gradient.addColorStop(1, '#008044');<br />
-                                ctx.fillStyle = gradient;<br />
-                                ctx.fillRect(0, 0, 400, 300);
+                                <span class="code-line">var gradient = ctx.createLinearGradient(0, 0, 400, 300);</span>
+                                <span class="code-line">gradient.addColorStop(0, '#006233');</span>
+                                <span class="code-line">gradient.addColorStop(1, '#008044');</span>
+                                <span class="code-line">ctx.fillStyle = gradient;</span>
+                                <span class="code-line">ctx.fillRect(0, 0, 400, 300);</span>
                             </div>
                         </div>
                     </div>
@@ -226,29 +124,29 @@
                     <div class="step">
                         <div class="step-number">3</div>
                         <span style="font-weight: bold; color: #006233;">Cercles concentriques</span>
-                        <div style="margin-left: 40px; margin-top: 10px;">
-                            <p>Dessin de trois cercles pour l'effet &quot;cible&quot;.</p>
+                        <div class="indent">
+                            <p>Dessin de trois cercles pour l'effet "cible".</p>
                             <div class="code-block">
-                                // Cercle extérieur blanc<br />
-                                ctx.beginPath();<br />
-                                ctx.arc(200, 150, 80, 0, Math.PI * 2);<br />
-                                ctx.strokeStyle = '#FFFFFF';<br />
-                                ctx.lineWidth = 3;<br />
-                                ctx.stroke();<br />
-                                <br />
-                                // Cercle moyen rouge<br />
-                                ctx.beginPath();<br />
-                                ctx.arc(200, 150, 60, 0, Math.PI * 2);<br />
-                                ctx.strokeStyle = '#DA251D';<br />
-                                ctx.lineWidth = 3;<br />
-                                ctx.stroke();<br />
-                                <br />
-                                // Cercle intérieur blanc<br />
-                                ctx.beginPath();<br />
-                                ctx.arc(200, 150, 40, 0, Math.PI * 2);<br />
-                                ctx.strokeStyle = '#FFFFFF';<br />
-                                ctx.lineWidth = 3;<br />
-                                ctx.stroke();
+                                <span class="code-line">// Cercle extérieur blanc</span>
+                                <span class="code-line">ctx.beginPath();</span>
+                                <span class="code-line">ctx.arc(200, 150, 80, 0, Math.PI * 2);</span>
+                                <span class="code-line">ctx.strokeStyle = '#FFFFFF';</span>
+                                <span class="code-line">ctx.lineWidth = 3;</span>
+                                <span class="code-line">ctx.stroke();</span>
+                                <span class="code-line"></span>
+                                <span class="code-line">// Cercle moyen rouge</span>
+                                <span class="code-line">ctx.beginPath();</span>
+                                <span class="code-line">ctx.arc(200, 150, 60, 0, Math.PI * 2);</span>
+                                <span class="code-line">ctx.strokeStyle = '#DA251D';</span>
+                                <span class="code-line">ctx.lineWidth = 3;</span>
+                                <span class="code-line">ctx.stroke();</span>
+                                <span class="code-line"></span>
+                                <span class="code-line">// Cercle intérieur blanc</span>
+                                <span class="code-line">ctx.beginPath();</span>
+                                <span class="code-line">ctx.arc(200, 150, 40, 0, Math.PI * 2);</span>
+                                <span class="code-line">ctx.strokeStyle = '#FFFFFF';</span>
+                                <span class="code-line">ctx.lineWidth = 3;</span>
+                                <span class="code-line">ctx.stroke();</span>
                             </div>
                         </div>
                     </div>
@@ -256,27 +154,27 @@
                     <div class="step">
                         <div class="step-number">4</div>
                         <span style="font-weight: bold; color: #006233;">Étoile centrale dorée</span>
-                        <div style="margin-left: 40px; margin-top: 10px;">
+                        <div class="indent">
                             <p>Dessin d'une étoile à 5 branches avec la fonction drawFivePointedStar().</p>
                             <div class="code-block">
-                                function drawFivePointedStar(ctx, cx, cy, outerRadius, innerRadius) {<br />
-                                &nbsp;&nbsp;ctx.beginPath();<br />
-                                &nbsp;&nbsp;var angle = Math.PI / 2;<br />
-                                &nbsp;&nbsp;var angleStep = Math.PI / 5;<br />
-                                &nbsp;&nbsp;for (var i = 0; i &lt; 10; i++) {<br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;var radius = (i % 2 === 0) ? outerRadius : innerRadius;<br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;var x = cx + Math.cos(angle) * radius;<br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;var y = cy - Math.sin(angle) * radius;<br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;if (i === 0) ctx.moveTo(x, y);<br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;else ctx.lineTo(x, y);<br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;angle += angleStep;<br />
-                                &nbsp;&nbsp;}<br />
-                                &nbsp;&nbsp;ctx.closePath();<br />
-                                }<br />
-                                <br />
-                                drawFivePointedStar(ctx, 200, 150, 30, 15);<br />
-                                ctx.fillStyle = '#FFD700';<br />
-                                ctx.fill();
+                                <span class="code-line">function drawFivePointedStar(ctx, cx, cy, outerRadius, innerRadius) {</span>
+                                <span class="code-line">  ctx.beginPath();</span>
+                                <span class="code-line">  var angle = Math.PI / 2;</span>
+                                <span class="code-line">  var angleStep = Math.PI / 5;</span>
+                                <span class="code-line">  for (var i = 0; i &lt; 10; i++) {</span>
+                                <span class="code-line">    var radius = (i % 2 === 0) ? outerRadius : innerRadius;</span>
+                                <span class="code-line">    var x = cx + Math.cos(angle) * radius;</span>
+                                <span class="code-line">    var y = cy - Math.sin(angle) * radius;</span>
+                                <span class="code-line">    if (i === 0) ctx.moveTo(x, y);</span>
+                                <span class="code-line">    else ctx.lineTo(x, y);</span>
+                                <span class="code-line">    angle += angleStep;</span>
+                                <span class="code-line">  }</span>
+                                <span class="code-line">  ctx.closePath();</span>
+                                <span class="code-line">}</span>
+                                <span class="code-line"></span>
+                                <span class="code-line">drawFivePointedStar(ctx, 200, 150, 30, 15);</span>
+                                <span class="code-line">ctx.fillStyle = '#FFD700';</span>
+                                <span class="code-line">ctx.fill();</span>
                             </div>
                         </div>
                     </div>
@@ -284,19 +182,19 @@
                     <div class="step">
                         <div class="step-number">5</div>
                         <span style="font-weight: bold; color: #006233;">Silhouette de coureur</span>
-                        <div style="margin-left: 40px; margin-top: 10px;">
+                        <div class="indent">
                             <p>Dessin d'une silhouette représentant l'activité sportive.</p>
                             <div class="code-block">
-                                ctx.beginPath();<br />
-                                // Tête<br />
-                                ctx.arc(200, 90, 8, 0, Math.PI * 2);<br />
-                                // Corps<br />
-                                ctx.moveTo(200, 98);<br />
-                                ctx.lineTo(200, 130);<br />
-                                // Bras et jambes...<br />
-                                ctx.strokeStyle = '#FFFFFF';<br />
-                                ctx.lineWidth = 3;<br />
-                                ctx.stroke();
+                                <span class="code-line">ctx.beginPath();</span>
+                                <span class="code-line">// Tête</span>
+                                <span class="code-line">ctx.arc(200, 90, 8, 0, Math.PI * 2);</span>
+                                <span class="code-line">// Corps</span>
+                                <span class="code-line">ctx.moveTo(200, 98);</span>
+                                <span class="code-line">ctx.lineTo(200, 130);</span>
+                                <span class="code-line">// Bras et jambes...</span>
+                                <span class="code-line">ctx.strokeStyle = '#FFFFFF';</span>
+                                <span class="code-line">ctx.lineWidth = 3;</span>
+                                <span class="code-line">ctx.stroke();</span>
                             </div>
                         </div>
                     </div>
@@ -304,17 +202,17 @@
                     <div class="step">
                         <div class="step-number">6</div>
                         <span style="font-weight: bold; color: #006233;">Couronne de laurier</span>
-                        <div style="margin-left: 40px; margin-top: 10px;">
+                        <div class="indent">
                             <p>Ajout d'une couronne de laurier symbolisant la victoire.</p>
                             <div class="code-block">
-                                function drawLaurelWreath(ctx, cx, cy, diameter) {<br />
-                                &nbsp;&nbsp;var radius = diameter / 2;<br />
-                                &nbsp;&nbsp;var leafCount = 12;<br />
-                                &nbsp;&nbsp;for (var i = 0; i &lt; leafCount; i++) {<br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;// Dessin de chaque feuille...<br />
-                                &nbsp;&nbsp;}<br />
-                                }<br />
-                                drawLaurelWreath(ctx, 200, 150, 100);
+                                <span class="code-line">function drawLaurelWreath(ctx, cx, cy, diameter) {</span>
+                                <span class="code-line">  var radius = diameter / 2;</span>
+                                <span class="code-line">  var leafCount = 12;</span>
+                                <span class="code-line">  for (var i = 0; i &lt; leafCount; i++) {</span>
+                                <span class="code-line">    // Dessin de chaque feuille...</span>
+                                <span class="code-line">  }</span>
+                                <span class="code-line">}</span>
+                                <span class="code-line">drawLaurelWreath(ctx, 200, 150, 100);</span>
                             </div>
                         </div>
                     </div>
@@ -322,140 +220,20 @@
                     <div class="step">
                         <div class="step-number">7</div>
                         <span style="font-weight: bold; color: #006233;">Texte final</span>
-                        <div style="margin-left: 40px; margin-top: 10px;">
+                        <div class="indent">
                             <p>Ajout du texte avec effets visuels.</p>
                             <div class="code-block">
-                                ctx.font = 'bold 24px "Arial Black", Arial, sans-serif';<br />
-                                ctx.fillStyle = '#FFFFFF';<br />
-                                ctx.textAlign = 'center';<br />
-                                ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';<br />
-                                ctx.shadowBlur = 5;<br />
-                                ctx.shadowOffsetX = 2;<br />
-                                ctx.shadowOffsetY = 2;<br />
-                                ctx.fillText('SPORT', 200, 220);<br />
-                                ctx.fillText('ALGÉRIEN', 200, 250);
+                                <span class="code-line">ctx.font = 'bold 24px "Arial Black", Arial, sans-serif';</span>
+                                <span class="code-line">ctx.fillStyle = '#FFFFFF';</span>
+                                <span class="code-line">ctx.textAlign = 'center';</span>
+                                <span class="code-line">ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';</span>
+                                <span class="code-line">ctx.shadowBlur = 5;</span>
+                                <span class="code-line">ctx.shadowOffsetX = 2;</span>
+                                <span class="code-line">ctx.shadowOffsetY = 2;</span>
+                                <span class="code-line">ctx.fillText('SPORT', 200, 220);</span>
+                                <span class="code-line">ctx.fillText('ALGÉRIEN', 200, 250);</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Fonctions JavaScript -->
-                <div class="explanation fade-in">
-                    <div class="section-header">
-                        <h3>Fonctions JavaScript Implementées</h3>
-                        <p>Les 4 fonctions principales pour manipuler le canvas</p>
-                    </div>
-                    
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-                        <thead>
-                            <tr style="background: #006233; color: white;">
-                                <th style="padding: 10px; text-align: left;">Fonction</th>
-                                <th style="padding: 10px; text-align: left;">Description</th>
-                                <th style="padding: 10px; text-align: left;">Paramètres</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="border-bottom: 1px solid #dee2e6;">
-                                <td style="padding: 10px;"><strong>drawLogo()</strong></td>
-                                <td style="padding: 10px;">Dessine le logo complet avec tous les éléments</td>
-                                <td style="padding: 10px;">Aucun</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #dee2e6;">
-                                <td style="padding: 10px;"><strong>clearCanvas()</strong></td>
-                                <td style="padding: 10px;">Efface complètement le canvas</td>
-                                <td style="padding: 10px;">Aucun</td>
-                            </tr>
-                            <tr style="border-bottom: 1px solid #dee2e6;">
-                                <td style="padding: 10px;"><strong>animateLogo()</strong></td>
-                                <td style="padding: 10px;">Active l'animation du logo (rotation, pulsation)</td>
-                                <td style="padding: 10px;">Aucun</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px;"><strong>drawFivePointedStar()</strong></td>
-                                <td style="padding: 10px;">Fonction utilitaire pour dessiner une étoile</td>
-                                <td style="padding: 10px;">ctx, cx, cy, outerRadius, innerRadius</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Affichage heure -->
-                <div class="time-display fade-in" id="timeDisplay">
-                    <div class="time-container">
-                        <div class="time-content">
-                            <div class="time-label">Date et heure actuelles</div>
-                            <div class="time-value" id="currentTime">Chargement de l'heure...</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <div class="footer-brand">
-                        <div class="footer-logo">SA</div>
-                        <div class="footer-brand-info">
-                            <h4 class="footer-title">Canvas Logo</h4>
-                            <p class="footer-subtitle">Création graphique avec Canvas</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Logo représentant les valeurs sportives algériennes,
-                        créé avec l'API Canvas 2D.
-                    </p>
-                </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-heading">Navigation</h4>
-                    <div class="footer-nav-links">
-                        <a href="index.html" class="footer-link">Accueil</a>
-                        <a href="football.xhtml" class="footer-link">Football</a>
-                        <a href="autres-sports.xhtml" class="footer-link">Autres Sports</a>
-                        <a href="athletes.xhtml" class="footer-link">Athlètes</a>
-                        <a href="formulaire-contact.xhtml" class="footer-link">Formulaire</a>
-                        <a href="canvas.xhtml" class="footer-link">Canvas</a>
-                    </div>
-                </div>
-
-                <div class="footer-column">
-                    <h4 class="footer-heading">Contact &amp; Infos</h4>
-                    <div class="contact-info">
-                        <a href="formulaire-contact.xhtml" class="contact-link">Formulaire de contact</a>
-                        <a href="mailto:contact@sport-algerien.dz" class="contact-link">contact@sport-algerien.dz</a>
-                        <div class="contact-item">Projet académique L1 Informatique</div>
-                        <div class="contact-item">Universit&amp;#233; de Bourgogne</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="page-navigation">
-                <button class="nav-prev" onclick="goToPreviousPage();">
-                    <span class="nav-icon">←</span>
-                    <span class="nav-text">Page précédente</span>
-                </button>
-                
-                <a href="#" class="nav-top">
-                    <span class="nav-icon">↑</span>
-                    <span class="nav-text">Haut de page</span>
-                </a>
-                
-                <button class="nav-next" onclick="goToNextPage();">
-                    <span class="nav-text">Page suivante</span>
-                    <span class="nav-icon">→</span>
-                </button>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p>© 2025 Chanez Zouina Dekimeche - Projet Web L1 - Tous droits réservés</p>
-                    <div class="validation-badges">
-                        <span class="badge">✓ XHTML 1.0 Strict</span>
-                        <span class="badge">✓ CSS Level 3</span>
-                        <span class="badge">✓ Canvas API</span>
                     </div>
                 </div>
             </div>
@@ -463,7 +241,7 @@
     </div>
 
     <script src="../js/script.js"></script>
-    <script type="text/javascript">
+    <script>
         // Initialisation au chargement de la page
         window.onload = function() {
             // Dessiner le logo immédiatement

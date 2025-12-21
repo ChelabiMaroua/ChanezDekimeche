@@ -1,3 +1,14 @@
+// ============================================
+// FICHIER: script.js - CORRIGÉ
+// AUTEUR: Chanez Dekimeche
+// PROJET: Sport Algérien - Module Info1Rb
+// ============================================
+
+// Variables globales pour l'animation
+var animationActive = false;
+var animationFrameId = null;
+var starRotation = 0;
+var pulseValue = 0;
 
 // ============================================
 // FONCTION 1: Affichage de l'heure et du jour
@@ -5,31 +16,25 @@
 function updateTime() {
     var now = new Date();
     
-    // Noms des jours
     var jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
     var jour = jours[now.getDay()];
     
-    // Format date
     var jourNum = now.getDate();
     var mois = now.getMonth() + 1;
     var annee = now.getFullYear();
     
-    // Format heure
     var heures = now.getHours();
     var minutes = now.getMinutes();
     var secondes = now.getSeconds();
     
-    // Ajout zéro
     if (heures < 10) heures = "0" + heures;
     if (minutes < 10) minutes = "0" + minutes;
     if (secondes < 10) secondes = "0" + secondes;
     
-    // Texte final
     var dateTexte = jour + " " + jourNum + "/" + mois + "/" + annee;
     var heureTexte = heures + ":" + minutes + ":" + secondes;
     var texteComplet = dateTexte + " - " + heureTexte;
     
-    // Mise à jour (SANS querySelector)
     var timeElements = document.getElementsByClassName('time-value');
     for (var i = 0; i < timeElements.length; i++) {
         timeElements[i].innerHTML = texteComplet;
@@ -45,7 +50,6 @@ function validateForm() {
     var nom = document.getElementById('nom');
     var email = document.getElementById('email');
     var sport = document.getElementById('sport');
-    var isValid = true;
     
     // Reset styles
     if (nom) nom.style.borderColor = '';
@@ -69,7 +73,6 @@ function validateForm() {
             return false;
         }
         
-        // Validation format email
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email.value)) {
             email.style.borderColor = 'red';
@@ -91,14 +94,12 @@ function validateForm() {
     var messageDiv = document.getElementById('messageValidation');
     if (messageDiv) {
         messageDiv.style.display = 'block';
-        
-        // Timer pour cacher (SANS addEventListener)
         setTimeout(function() {
             messageDiv.style.display = 'none';
         }, 3000);
     }
     
-    return false; // Empêche envoi réel
+    return false;
 }
 
 // ============================================
@@ -152,7 +153,7 @@ function playVideo() {
         try {
             videos[i].play();
         } catch(e) {
-            // Gestion erreur simple
+            console.log("Erreur lecture vidéo");
         }
     }
 }
@@ -199,11 +200,7 @@ function goToNextPage() {
 }
 
 // ============================================
-// FONCTION 6: Dessin Canvas
-// ============================================
-// ============================================
-// FONCTIONS CANVAS AMÉLIORÉES
-// Logo "Sport Algérien" - Design professionnel
+// FONCTION 6: Dessin Canvas 
 // ============================================
 
 function drawLogo() {
@@ -212,18 +209,18 @@ function drawLogo() {
     
     var ctx = canvas.getContext('2d');
     
-    // Effacer le canvas
+    // Effacer
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     // 1. FOND : Rectangle vert avec dégradé
     var gradient = ctx.createLinearGradient(0, 0, 400, 300);
-    gradient.addColorStop(0, '#006233');    // Vert foncé
-    gradient.addColorStop(1, '#008044');    // Vert clair
+    gradient.addColorStop(0, '#006233');
+    gradient.addColorStop(1, '#008044');
     
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 400, 300);
     
-    // 2. CERCLES CONCENTRIQUES (effet cible)
+    // 2. CERCLES CONCENTRIQUES
     ctx.beginPath();
     ctx.arc(200, 150, 80, 0, Math.PI * 2);
     ctx.strokeStyle = '#FFFFFF';
@@ -232,7 +229,7 @@ function drawLogo() {
     
     ctx.beginPath();
     ctx.arc(200, 150, 60, 0, Math.PI * 2);
-    ctx.strokeStyle = '#DA251D'; // Rouge
+    ctx.strokeStyle = '#DA251D';
     ctx.lineWidth = 3;
     ctx.stroke();
     
@@ -242,15 +239,15 @@ function drawLogo() {
     ctx.lineWidth = 3;
     ctx.stroke();
     
-    // 3. ÉTOILE CENTRALE (5 branches, style olympique)
+    // 3. ÉTOILE CENTRALE (5 branches)
     drawFivePointedStar(ctx, 200, 150, 30, 15);
-    ctx.fillStyle = '#FFD700'; // Or
+    ctx.fillStyle = '#FFD700';
     ctx.fill();
     ctx.strokeStyle = '#FFFFFF';
     ctx.lineWidth = 2;
     ctx.stroke();
     
-    // 4. SYMBOLE SPORTIF (silhouette de coureur)
+    // 4. SILHOUETTE DE COUREUR
     ctx.beginPath();
     // Tête
     ctx.arc(200, 90, 8, 0, Math.PI * 2);
@@ -275,15 +272,15 @@ function drawLogo() {
     ctx.lineCap = 'round';
     ctx.stroke();
     
-    // 5. LAURIER (couronne de victoire)
+    // 5. COURONNE DE LAURIER
     drawLaurelWreath(ctx, 200, 150, 100);
     
-    // 6. TEXTE "SPORT ALGÉRIEN" avec effet
+    // 6. TEXTE
     ctx.font = 'bold 24px "Arial Black", Arial, sans-serif';
     ctx.fillStyle = '#FFFFFF';
     ctx.textAlign = 'center';
     
-    // Ombre portée
+    // Ombre
     ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
     ctx.shadowBlur = 5;
     ctx.shadowOffsetX = 2;
@@ -298,7 +295,7 @@ function drawLogo() {
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 0;
     
-    // 7. BORDURE DÉCORATIVE
+    // 7. BORDURE
     ctx.strokeStyle = '#FFD700';
     ctx.lineWidth = 4;
     ctx.strokeRect(10, 10, 380, 280);
@@ -310,7 +307,7 @@ function drawLogo() {
 function drawFivePointedStar(ctx, cx, cy, outerRadius, innerRadius) {
     ctx.beginPath();
     
-    var angle = Math.PI / 2;  // Commence en haut
+    var angle = Math.PI / 2;
     var angleStep = Math.PI / 5;
     
     for (var i = 0; i < 10; i++) {
@@ -350,23 +347,21 @@ function drawLaurelWreath(ctx, cx, cy, diameter) {
         ctx.translate(x, y);
         ctx.rotate(angle + Math.PI/2);
         
-        // Dessiner une feuille de laurier
+        // Feuille de laurier simple
         ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.bezierCurveTo(-8, -15, -5, -25, 0, -30);
-        ctx.bezierCurveTo(5, -25, 8, -15, 0, 0);
+        ctx.ellipse(0, -12, 8, 12, 0, 0, Math.PI * 2);
         ctx.closePath();
         
-        ctx.fillStyle = '#228B22'; // Vert forêt
+        ctx.fillStyle = '#228B22';
         ctx.fill();
-        ctx.strokeStyle = '#006400'; // Vert foncé
+        ctx.strokeStyle = '#006400';
         ctx.lineWidth = 1;
         ctx.stroke();
         
-        // Veine centrale de la feuille
+        // Veine centrale
         ctx.beginPath();
         ctx.moveTo(0, 0);
-        ctx.lineTo(0, -25);
+        ctx.lineTo(0, -20);
         ctx.strokeStyle = '#006400';
         ctx.lineWidth = 1.5;
         ctx.stroke();
@@ -377,193 +372,9 @@ function drawLaurelWreath(ctx, cx, cy, diameter) {
     ctx.restore();
 }
 
-// ============================================
-// FONCTION POUR ANIMER LE LOGO
-// ============================================
-function animateLogo() {
-    var canvas = document.getElementById('logoCanvas');
-    if (!canvas) return;
-    
-    var ctx = canvas.getContext('2d');
-    var rotation = 0;
-    var pulse = 0;
-    var direction = 1;
-    
-    function animate() {
-        // Effacer
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // 1. FOND avec effet de pulsation
-        var pulseValue = 10 * Math.sin(pulse);
-        var gradient = ctx.createLinearGradient(0, 0, 400, 300);
-        gradient.addColorStop(0, '#006' + (33 + pulseValue).toString(16).padStart(2, '0'));
-        gradient.addColorStop(1, '#008' + (44 + pulseValue).toString(16).padStart(2, '0'));
-        
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, 400, 300);
-        
-        // 2. CERCLES CONCENTRIQUES animés
-        ctx.save();
-        ctx.translate(200, 150);
-        
-        // Cercle extérieur (rotation)
-        ctx.rotate(rotation);
-        ctx.beginPath();
-        ctx.arc(0, 0, 80, 0, Math.PI * 2);
-        ctx.strokeStyle = '#FFFFFF';
-        ctx.lineWidth = 3;
-        ctx.stroke();
-        ctx.rotate(-rotation);
-        
-        // Cercle moyen (pulsation)
-        var scale = 1 + 0.1 * Math.sin(pulse);
-        ctx.scale(scale, scale);
-        ctx.beginPath();
-        ctx.arc(0, 0, 60, 0, Math.PI * 2);
-        ctx.strokeStyle = '#DA251D';
-        ctx.lineWidth = 3;
-        ctx.stroke();
-        ctx.scale(1/scale, 1/scale);
-        
-        // Cercle intérieur (rotation inverse)
-        ctx.rotate(-rotation);
-        ctx.beginPath();
-        ctx.arc(0, 0, 40, 0, Math.PI * 2);
-        ctx.strokeStyle = '#FFFFFF';
-        ctx.lineWidth = 3;
-        ctx.stroke();
-        
-        ctx.restore();
-        
-        // 3. ÉTOILE CENTRALE (effet brillant)
-        drawFivePointedStar(ctx, 200, 150, 30, 15);
-        
-        // Effet de brillance sur l'étoile
-        var shineGradient = ctx.createRadialGradient(200, 150, 5, 200, 150, 35);
-        shineGradient.addColorStop(0, '#FFEE44'); // Jaune brillant
-        shineGradient.addColorStop(1, '#FFD700'); // Or
-        
-        ctx.fillStyle = shineGradient;
-        ctx.fill();
-        ctx.strokeStyle = '#FFFFFF';
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        
-        // 4. COUREUR (animation course)
-        ctx.save();
-        var legAngle = 0.5 * Math.sin(pulse * 2); // Mouvement de jambes
-        
-        // Tête
-        ctx.beginPath();
-        ctx.arc(200, 90, 8, 0, Math.PI * 2);
-        ctx.fillStyle = '#FFFFFF';
-        ctx.fill();
-        
-        // Corps
-        ctx.moveTo(200, 98);
-        ctx.lineTo(200, 130);
-        
-        // Bras (balancement)
-        var armAngle = 0.3 * Math.sin(pulse);
-        ctx.moveTo(200, 110);
-        ctx.lineTo(200 - 20 * Math.cos(armAngle), 110 - 10 * Math.sin(armAngle));
-        
-        ctx.moveTo(200, 110);
-        ctx.lineTo(200 + 20 * Math.cos(armAngle), 110 + 10 * Math.sin(armAngle));
-        
-        // Jambes (course)
-        ctx.moveTo(200, 130);
-        ctx.lineTo(200 - 15, 160 + 10 * Math.sin(legAngle));
-        
-        ctx.moveTo(200, 130);
-        ctx.lineTo(200 + 15, 160 - 10 * Math.sin(legAngle));
-        
-        ctx.strokeStyle = '#FFFFFF';
-        ctx.lineWidth = 3;
-        ctx.lineCap = 'round';
-        ctx.stroke();
-        
-        ctx.restore();
-        
-        // 5. LAURIER statique
-        drawLaurelWreath(ctx, 200, 150, 100);
-        
-        // 6. TEXTE avec effet de brillance
-        ctx.font = 'bold 24px "Arial Black", Arial, sans-serif';
-        ctx.textAlign = 'center';
-        
-        // Effet de brillance sur le texte
-        var textShine = Math.sin(pulse) * 0.2 + 0.8;
-        ctx.fillStyle = 'rgba(255, 255, 255, ' + textShine + ')';
-        
-        // Ombre animée
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-        ctx.shadowBlur = 5 + 2 * Math.sin(pulse);
-        ctx.shadowOffsetX = 2 + Math.sin(pulse);
-        ctx.shadowOffsetY = 2 + Math.sin(pulse);
-        
-        ctx.fillText('SPORT', 200, 220);
-        ctx.fillText('ALGÉRIEN', 200, 250);
-        
-        // Réinitialiser l'ombre
-        ctx.shadowColor = 'transparent';
-        ctx.shadowBlur = 0;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
-        
-        // 7. BORDURE avec effet de pulsation
-        var borderPulse = 2 * Math.sin(pulse);
-        ctx.strokeStyle = '#FFD' + (700 + borderPulse * 100).toString().padStart(3, '0');
-        ctx.lineWidth = 4 + Math.sin(pulse);
-        ctx.strokeRect(10 + Math.sin(pulse), 10 + Math.sin(pulse), 
-                      380 - 2 * Math.sin(pulse), 280 - 2 * Math.sin(pulse));
-        
-        // Mettre à jour les animations
-        rotation += 0.01;
-        pulse += 0.05;
-        
-        // Limiter la rotation
-        if (rotation > Math.PI * 2) rotation = 0;
-        
-        // Continuer l'animation
-        setTimeout(animate, 50);
-    }
-    
-    animate();
-}
 
 // ============================================
-// FONCTION POUR EFFACER LE CANVAS
-// ============================================
-function clearCanvas() {
-    var canvas = document.getElementById('logoCanvas');
-    if (!canvas) return;
-    
-    var ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Afficher un message
-    ctx.font = '20px Arial';
-    ctx.fillStyle = '#006233';
-    ctx.textAlign = 'center';
-    ctx.fillText('Canvas effacé - Cliquez sur "Dessiner"', 200, 150);
-}
-
-// ============================================
-// FONCTION POUR TÉLÉCHARGER LE LOGO
-// ============================================
-function downloadLogo() {
-    var canvas = document.getElementById('logoCanvas');
-    if (!canvas) return;
-    
-    var link = document.createElement('a');
-    link.download = 'logo-sport-algerien.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-}
-
-// ============================================
-// INITIALISATION (SANS addEventListener)
+// INITIALISATION
 // ============================================
 function initAll() {
     // Heure
@@ -576,28 +387,23 @@ function initAll() {
         setInterval(nextSlide, 5000);
     }
     
-    // Canvas
-    var canvas = document.getElementById('logoCanvas');
-    if (canvas) {
-        drawLogo();
-    }
-    
     // Cacher message validation
     var msg = document.getElementById('messageValidation');
     if (msg) {
         msg.style.display = 'none';
     }
     
-    // Effets fade-in (simple)
+    // Effets fade-in
     var fadeElems = document.getElementsByClassName('fade-in');
     for (var i = 0; i < fadeElems.length; i++) {
         fadeElems[i].style.opacity = '0';
         (function(elem) {
             setTimeout(function() {
                 elem.style.opacity = '1';
-            }, 100);
+            }, 100 + (i * 50));
         })(fadeElems[i]);
     }
 }
 
+// Démarrage
 window.onload = initAll;
