@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+    <!-- CONSIGNE 12 : Balises meta avec auteur -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Chanez Dekimeche" />
+    <meta name="description" content="Page Football - Le football algérien, ses champions et ses victoires" />
+    
+    <title>Football Algérien | Les Fennecs Champions</title>
+    
+    <!-- CONSIGNE 14 : Feuille de style -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+    <div class="site-header" id="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="brand">
+                    <div class="brand-logo">SA</div>
+                    <div class="brand-name">Sport<span>Algérien</span></div>
+                </a>
+
+                <!-- Navigation principale (Consigne 6 : boutons) -->
+                <div class="primary-nav">
+                    <button class="nav-btn" onclick="window.location.href='index.html'">
+                        <span class="btn-text">Accueil</span>
+                    </button>
+                    
+                    <button class="nav-btn active" onclick="window.location.href='football.xhtml'">
+                        <span class="btn-text">Football</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='autres-sports.xhtml'">
+                        <span class="btn-text">Autres Sports</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='athletes.xhtml'">
+                        <span class="btn-text">Athlètes</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='formulaire-contact.xhtml'">
+                        <span class="btn-text">Formulaire</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='canvas.xhtml'">
+                        <span class="btn-text">Canvas</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="carousel-container" id="carousel">
+            <div class="carousel-slide active">
+                <img src="../media/images/quatarcup2.jpg" class="carousel-bg-image" alt="Coupe d'Afrique des Nations 2019" />
+                <div class="carousel-overlay"></div>
+                <div class="slide-content fade-in">
+                    <span class="slide-badge">Football National</span>
+                    <h1 class="slide-title">Les Fennecs d'Algérie</h1>
+                    <p class="slide-description">
+                        Champions d'Afrique 1990 et 2019, découvrez l'histoire, les joueurs légendaires 
+                        et les moments mythiques du football algérien.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <!-- Section 1: Introduction au football algérien -->
+            <div class="presentation fade-in">
+                <div class="section-intro">
+                    <h2>Le Football en Algérie : Une Passion Nationale</h2>
+                    <p>
+                        Le football est le sport le plus populaire en Algérie. L'équipe nationale, 
+                        surnommée "Les Fennecs", a remporté la Coupe d'Afrique des Nations à deux reprises 
+                        et a participé à quatre Coupes du Monde.
+                    </p>
+                </div>
+
+                <!-- Navigation rapide (Consigne 6 : images cliquables) -->
+                <div class="content-cards">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">CAN 2019 : Le Triomphe</h3>
+                            <p class="card-description">
+                                Victoire historique 1-0 contre le Sénégal en finale, avec un but de Bounedjah.
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#can2019">
+                                <img src="../media/images/mahrez.jpg" alt="Riyad Mahrez avec la CAN 2019" style="width:100%; border-radius:8px; margin-bottom:15px;" />
+                            </a>
+                            <a href="#can2019" class="btn btn-secondary">Voir les détails →</a>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Légendes du Football</h3>
+                            <p class="card-description">
+                                Rabah Madjer, Lakhdar Belloumi, Islam Slimani, Riyad Mahrez...
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#legendes">
+                                <img src="../media/images/madjer.jpg" alt="Rabah Madjer, légende algérienne" style="width:100%; border-radius:8px; margin-bottom:15px;" />
+                            </a>
+                            <a href="#legendes" class="btn btn-secondary">Découvrir →</a>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Clubs Historiques</h3>
+                            <p class="card-description">
+                                MC Alger, JS Kabylie, USM Alger, ES Sétif...
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#clubs">
+                                <img src="../media/images/jsk.jpg" alt="JS Kabylie, club historique" style="width:100%; border-radius:8px; margin-bottom:15px;" />
+                            </a>
+                            <a href="#clubs" class="btn btn-secondary">Explorer →</a>
+                            
+                            <!-- Consigne 10 : Lien vers site national -->
+                            <p style="margin-top:15px; font-size:0.9em;">
+                                <a href="https://www.lnf.dz" target="_blank" rel="noopener noreferrer">
+                                    Ligue Nationale de Football
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: CAN 2019 (Consigne 4 : deuxième partie) -->
+            <div class="medals-section fade-in" id="can2019">
+                <div class="section-header">
+                    <h3>CAN 2019 : Parcours du Champion</h3>
+                    <p>Le chemin vers la victoire en Égypte</p>
+                </div>
+
+                <!-- Tableau (Consigne 11) -->
+                <div class="table-container">
+                    <table class="medals-table">
+                        <thead>
+                            <tr>
+                                <th>Tour</th>
+                                <th>Adversaire</th>
+                                <th>Score</th>
+                                <th>Buts Algériens</th>
+                                <th>Stade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Groupe C</td>
+                                <td>Kenya</td>
+                                <td>2-0</td>
+                                <td>Baghda (34'), Mahrez (43')</td>
+                                <td>Stade du 30 Juin, Le Caire</td>
+                            </tr>
+                            <tr>
+                                <td>Groupe C</td>
+                                <td>Sénégal</td>
+                                <td>1-0</td>
+                                <td>Bounedjah (45+2')</td>
+                                <td>Stade du 30 Juin, Le Caire</td>
+                            </tr>
+                            <tr>
+                                <td>Groupe C</td>
+                                <td>Tanzanie</td>
+                                <td>3-0</td>
+                                <td>Slimani (34'), Ounas (39', 44')</td>
+                                <td>Stade Al Salam, Le Caire</td>
+                            </tr>
+                            <tr>
+                                <td>1/8 finale</td>
+                                <td>Guinée</td>
+                                <td>3-0</td>
+                                <td>Belaïli (24'), Mahrez (57'), Ounas (82')</td>
+                                <td>Stade du 30 Juin, Le Caire</td>
+                            </tr>
+                            <tr>
+                                <td>1/4 finale</td>
+                                <td>Côte d'Ivoire</td>
+                                <td>1-1 (4-3 tab)</td>
+                                <td>Belaïli (62')</td>
+                                <td>Stade de Suez, Suez</td>
+                            </tr>
+                            <tr>
+                                <td>Demi-finale</td>
+                                <td>Nigeria</td>
+                                <td>2-1</td>
+                                <td>Mahrez (90+5')</td>
+                                <td>Stade international, Le Caire</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Finale</strong></td>
+                                <td><strong>Sénégal</strong></td>
+                                <td><strong>1-0</strong></td>
+                                <td><strong>Bounedjah (2')</strong></td>
+                                <td><strong>Stade international, Le Caire</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Consigne 5 : Vidéo -->
+                <div class="media-section fade-in" style="margin-top: 40px;">
+                    <div class="section-header">
+                        <h4>Vidéo : Résumé de la finale CAN 2019</h4>
+                    </div>
+                    <div class="media-grid">
+                        <div class="media-item">
+                            <!-- Consigne 9 : Lien sous forme d'image -->
+                            <a href="https://www.youtube.com/watch?v=jYSAoLG1G_8" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="video-link">
+                                <div class="video-thumbnail">
+                                    <img src="../media/images/can.jpg" 
+                                         alt="Miniature - Résumé CAN 2019 Algérie vs Sénégal"
+                                         class="media-preview" />
+                                </div>
+                            </a>
+                            
+                            <div class="media-info">
+                                <p class="media-description">
+                                    Résumé officiel de la finale CAN 2019 : Algérie 1-0 Sénégal<br />
+                                    Victoire historique des Fennecs avec un but de Bounedjah à la 2ème minute.
+                                </p>
+                                
+                                <!-- Consigne 10 : Lien vers URL internationale (texte) -->
+                                <div class="video-links">
+                                    <a href="https://www.youtube.com/watch?v=jYSAoLG1G_8" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="btn btn-secondary">
+                                        <span>Ouvrir la vidéo sur YouTube</span>
+                                        <span class="external-icon">↗</span>
+                                    </a>
+                                    
+                                    <p style="margin-top: 10px; font-size: 0.85em; color: #666;">
+                                        Vidéo officielle de la 
+                                        <a href="https://www.youtube.com/c/CAF" 
+                                           target="_blank"
+                                           rel="noopener noreferrer">
+                                            Confédération Africaine de Football (CAF)
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Légendes (Consigne 4 : troisième partie) -->
+            <div class="resources-section fade-in" id="legendes">
+                <div class="section-header">
+                    <div>
+                        <h3 class="section-title">Légendes du Football Algérien</h3>
+                        <p class="section-subtitle">Les joueurs qui ont marqué l'histoire</p>
+                    </div>
+                </div>
+
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">Rabah Madjer</h4>
+                        </div>
+                        <p class="resource-description">
+                            Vainqueur de la Ligue des Champions avec le FC Porto (1987), 
+                            but décisif en finale.
+                        </p>
+                        <div class="resource-stats">
+                            <span>68 sélections</span>
+                            <span>28 buts</span>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">Lakhdar Belloumi</h4>
+                        </div>
+                        <p class="resource-description">
+                            Meilleur joueur africain 1981, but historique contre l'Allemagne 
+                            en Coupe du Monde 1982.
+                        </p>
+                        <div class="resource-stats">
+                            <span>147 sélections</span>
+                            <span>34 buts</span>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">Riyad Mahrez</h4>
+                        </div>
+                        <p class="resource-description">
+                            Champion d'Angleterre avec Leicester (2016), 
+                            capitaine vainqueur de la CAN 2019.
+                        </p>
+                        <div class="resource-stats">
+                            <span>89 sélections</span>
+                            <span>30 buts</span>
+                        </div>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">Islam Slimani</h4>
+                        </div>
+                        <p class="resource-description">
+                            Meilleur buteur de l'histoire des Fennecs, 
+                            champion de Portugal avec le Sporting.
+                        </p>
+                        <div class="resource-stats">
+                            <span>98 sélections</span>
+                            <span>45 buts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Clubs (Consigne 4 : quatrième partie) -->
+            <div class="presentation fade-in" id="clubs">
+                <div class="section-intro">
+                    <h2>Clubs Historiques Algériens</h2>
+                    <p>
+                        Le championnat algérien compte plusieurs clubs mythiques qui ont brillé 
+                        sur la scène africaine et arabe.
+                    </p>
+                </div>
+
+                <!-- Tableau des clubs (Consigne 11 : deuxième tableau) -->
+                <div class="table-container">
+                    <table class="medals-table">
+                        <thead>
+                            <tr>
+                                <th>Club</th>
+                                <th>Fondation</th>
+                                <th>Titres Nationaux</th>
+                                <th>Titres Africains</th>
+                                <th>Stade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>JS Kabylie</td>
+                                <td>1946</td>
+                                <td>14 championnats</td>
+                                <td>2 Coupes des Clubs Champions</td>
+                                <td>Stade du 1er Novembre</td>
+                            </tr>
+                            <tr>
+                                <td>ES Sétif</td>
+                                <td>1958</td>
+                                <td>8 championnats</td>
+                                <td>2 Ligue des Champions</td>
+                                <td>Stade du 8 Mai 1945</td>
+                            </tr>
+                            <tr>
+                                <td>MC Alger</td>
+                                <td>1921</td>
+                                <td>7 championnats</td>
+                                <td>1 Coupe des Coupes</td>
+                                <td>Stade du 5 Juillet</td>
+                            </tr>
+                            <tr>
+                                <td>USM Alger</td>
+                                <td>1937</td>
+                                <td>8 championnats</td>
+                                <td>1 Coupe de la CAF</td>
+                                <td>Stade Omar Hamadi</td>
+                            </tr>
+                            <tr>
+                                <td>CR Belouizdad</td>
+                                <td>1962</td>
+                                <td>9 championnats</td>
+                                <td>-</td>
+                                <td>Stade du 20 Août</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Section liens externes (Consigne 10) -->
+            <div class="resources-section fade-in">
+                <div class="section-header">
+                    <h3>Ressources Officielles du Football</h3>
+                    <p>Sites de référence et fédérations</p>
+                </div>
+
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">FAF</h4>
+                        </div>
+                        <p class="resource-description">
+                            Fédération Algérienne de Football
+                        </p>
+                        <a href="https://www.faf.dz" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span>Site officiel</span>
+                            <span class="external-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">FIFA</h4>
+                        </div>
+                        <p class="resource-description">
+                            Fédération Internationale de Football
+                        </p>
+                        <a href="https://www.fifa.com/fr/associations/association/alg" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span>Algérie sur FIFA</span>
+                            <span class="external-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">CAF</h4>
+                        </div>
+                        <p class="resource-description">
+                            Confédération Africaine de Football
+                        </p>
+                        <a href="https://www.cafonline.com" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span>Site officiel</span>
+                            <span class="external-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">LNF</h4>
+                        </div>
+                        <p class="resource-description">
+                            Ligue Nationale de Football
+                        </p>
+                        <a href="https://www.lnf.dz" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span>Championnat algérien</span>
+                            <span class="external-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Affichage heure (Consigne 13) -->
+            <div class="time-display fade-in" id="timeDisplay">
+                <div class="time-container">
+                    <div class="time-content">
+                        <div class="time-label">Date et heure actuelles</div>
+                        <div class="time-value" id="currentTime">Chargement de l'heure...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <div class="footer-logo">SA</div>
+                        <div class="footer-brand-info">
+                            <h4 class="footer-title">Football Algérien</h4>
+                            <p class="footer-subtitle">Les Fennecs Champions</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Histoire, statistiques et légendes du football algérien, 
+                        des origines à nos jours.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <div class="footer-nav-links">
+                        <a href="index.html" class="footer-link">
+                            <span>Accueil</span>
+                        </a>
+                        <a href="football.xhtml" class="footer-link">
+                            <span>Football</span>
+                        </a>
+                        <a href="autres-sports.xhtml" class="footer-link">
+                            <span>Autres Sports</span>
+                        </a>
+                        <a href="athletes.xhtml" class="footer-link">
+                            <span>Athlètes</span>
+                        </a>
+                        <a href="formulaire-contact.xhtml" class="footer-link">
+                            <span>Formulaire</span>
+                        </a>
+                        <a href="canvas.xhtml" class="footer-link">
+                            <span>Canvas</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact &amp; Infos</h4>
+                    <div class="contact-info">
+                        <a href="formulaire-contact.xhtml" class="contact-link">
+                            <span>Formulaire de contact</span>
+                        </a>
+                        <a href="mailto:football@sport-algerien.dz" class="contact-link">
+                            <span>football@sport-algerien.dz</span>
+                        </a>
+                        <div class="contact-item">
+                            <span>Projet académique L1 Info</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation entre pages (Consigne 8) -->
+            <div class="page-navigation">
+                <button class="nav-prev" onclick="goToPreviousPage()">
+                    <span class="nav-icon">←</span>
+                    <span class="nav-text">Page précédente</span>
+                </button>
+                
+                <a href="#" class="nav-top">
+                    <span class="nav-icon">↑</span>
+                    <span class="nav-text">Haut de page</span>
+                </a>
+                
+                <button class="nav-next" onclick="goToNextPage()">
+                    <span class="nav-text">Page suivante</span>
+                    <span class="nav-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2025 Chanez Zouina Dekimeche - Projet Web L1 - Tous droits réservés</p>
+                    <div class="validation-badges">
+                        <span class="badge">✓ XHTML 1.0 Strict</span>
+                        <span class="badge">✓ CSS Level 3</span>
+                        <span class="badge">✓ Football Algérien</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

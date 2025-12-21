@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+    <!-- CONSIGNE 12 : Balises meta avec auteur -->
+    <meta charset="UTF-8" />
+    <meta name="author" content="Chanez Dekimeche" />
+    <meta name="description" content="Page Autres Sports - Diversité sportive en Algérie" />
+    
+    <title>Autres Sports Algériens | Diversité Sportive</title>
+    
+    <!-- CONSIGNE 14 : Feuille de style -->
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
+<body>
+    <div class="site-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="brand">
+                    <div class="brand-logo">SA</div>
+                    <div class="brand-name">Sport<span>Algérien</span></div>
+                </a>
+
+                <!-- Navigation principale (Consigne 6 : boutons) -->
+                <div class="primary-nav">
+                    <button class="nav-btn" onclick="window.location.href='index.html';">
+                        <span class="btn-text">Accueil</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='football.xhtml';">
+                        <span class="btn-text">Football</span>
+                    </button>
+                    
+                    <button class="nav-btn active" onclick="window.location.href='autres-sports.xhtml';">
+                        <span class="btn-text">Autres Sports</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='athletes.xhtml';">
+                        <span class="btn-text">Athlètes</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='formulaire-contact.xhtml';">
+                        <span class="btn-text">Formulaire</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='canvas.xhtml';">
+                        <span class="btn-text">Canvas</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <!-- Section Sommaire (Consigne 4 et 6) -->
+            <div class="presentation fade-in" id="sommaire">
+                <div class="section-intro">
+                    <h2>Sommaire des Sports Algériens</h2>
+                    <p>
+                        Explorez la diversité des disciplines sportives où l'Algérie excelle au niveau 
+                        continental et international.
+                    </p>
+                </div>
+
+                <!-- Navigation rapide avec images (Consigne 6 : images cliquables) -->
+                <div class="content-cards">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Athlétisme</h3>
+                            <p class="card-description">
+                                Discipline reine aux Jeux Olympiques
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#athletisme">
+                                <img src="../media/images/athlete.jpg" alt="Athlétisme algérien" 
+                                     style="width:100%; border-radius:8px; margin-bottom:15px;" />
+                            </a>
+                            <a href="#athletisme" class="btn btn-secondary">Découvrir →</a>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Handball</h3>
+                            <p class="card-description">
+                                Sport collectif en plein essor
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#handball">
+                                <img src="../media/images/handball.jpg" alt="Handball algérien" 
+                                     style="width:100%; border-radius:8px; margin-bottom:15px;" />
+                            </a>
+                            <a href="#handball" class="btn btn-secondary">Explorer →</a>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Judo</h3>
+                            <p class="card-description">
+                                Art martial de précision et technique
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#judo">
+                                <img src="../media/images/judo.jpg" alt="Judo algérien" 
+                                     style="width:100%; border-radius:8px; margin-bottom:15px;" />
+                            </a>
+                            <a href="#judo" class="btn btn-secondary">Voir plus →</a>
+                            
+                            <!-- Consigne 10 : Lien vers site international -->
+                            <p style="margin-top:15px; font-size:0.9em;">
+                                <a href="https://www.ijf.org" target="_blank" rel="noopener noreferrer">
+                                    Fédération Internationale de Judo
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1: Athlétisme -->
+            <div class="medals-section fade-in" id="athletisme">
+                <div class="section-header">
+                    <h3>Athlétisme Algérien</h3>
+                    <p>La discipline la plus médaillée aux Jeux Olympiques</p>
+                </div>
+
+                <div class="sport-profile">
+                    <div class="profile-header">
+                        <div class="profile-info">
+                            <p><strong>Première médaille olympique :</strong> 1984 (Los Angeles)</p>
+                            <p><strong>Total médailles olympiques :</strong> 15 médailles</p>
+                            <p><strong>Meilleure performance :</strong> 5 médailles aux JO 2000</p>
+                        </div>
+                    </div>
+
+                    <!-- Tableau (Consigne 11) -->
+                    <div class="table-container">
+                        <table class="medals-table">
+                            <thead>
+                                <tr>
+                                    <th>Discipline</th>
+                                    <th>Champion</th>
+                                    <th>Performance</th>
+                                    <th>Compétition</th>
+                                    <th>Année</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1500m</td>
+                                    <td>Hassiba Boulmerka</td>
+                                    <td>Médaille d'Or</td>
+                                    <td>Jeux Olympiques</td>
+                                    <td>1992</td>
+                                </tr>
+                                <tr>
+                                    <td>1500m</td>
+                                    <td>Noureddine Morceli</td>
+                                    <td>Médaille d'Or</td>
+                                    <td>Jeux Olympiques</td>
+                                    <td>1996</td>
+                                </tr>
+                                <tr>
+                                    <td>800m</td>
+                                    <td>Taoufik Makhloufi</td>
+                                    <td>Médaille d'Or</td>
+                                    <td>Jeux Olympiques</td>
+                                    <td>2012</td>
+                                </tr>
+                                <tr>
+                                    <td>1500m</td>
+                                    <td>Taoufik Makhloufi</td>
+                                    <td>Médaille d'Argent</td>
+                                    <td>Jeux Olympiques</td>
+                                    <td>2016</td>
+                                </tr>
+                                <tr>
+                                    <td>5000m</td>
+                                    <td>Ali Saïdi-Sief</td>
+                                    <td>Médaille d'Argent</td>
+                                    <td>Jeux Olympiques</td>
+                                    <td>2000</td>
+                                </tr>
+                                <tr>
+                                    <td>Triple saut</td>
+                                    <td>Mohammed Taki</td>
+                                    <td>Record d'Afrique</td>
+                                    <td>Championnats du Monde</td>
+                                    <td>1999</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="achievement-description">
+                        <h5>L'Héritage de l'Athlétisme Algérien</h5>
+                        <p>
+                            L'athlétisme est le sport qui a rapporté le plus de médailles olympiques à l'Algérie. 
+                            Avec 15 médailles au total, dont 4 en or, les athlètes algériens ont brillé sur les 
+                            pistes du monde entier.
+                        </p>
+                        <p>
+                            De Boulmerka à Makhloufi, en passant par Morceli, l'Algérie a produit certains des 
+                            plus grands coureurs de demi-fond de l'histoire. Cette tradition d'excellence se 
+                            perpétue avec de jeunes talents émergents.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Handball -->
+            <div class="resources-section fade-in" id="handball">
+                <div class="section-header">
+                    <div>
+                        <h3 class="section-title">Handball Algérien</h3>
+                        <p class="section-subtitle">L'ascension d'un sport collectif</p>
+                    </div>
+                </div>
+
+                <div class="sport-profile">
+                    <div class="profile-header">
+                        <div class="profile-info">
+                            <p><strong>Participation olympique :</strong> 5 fois (1980-1996)</p>
+                            <p><strong>Meilleur résultat :</strong> 10ème place aux JO 1984</p>
+                            <p><strong>Club phare :</strong> GS Pétroliers (Mascara)</p>
+                        </div>
+                    </div>
+
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <div class="resource-header">
+                                <h4 class="resource-title">Champion d'Afrique</h4>
+                            </div>
+                            <p class="resource-description">
+                                Vainqueur du Championnat d'Afrique 1981 (Tunisie)
+                            </p>
+                            <div class="resource-stats">
+                                <span>1981</span>
+                                <span>Champion</span>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-header">
+                                <h4 class="resource-title">Jeux Africains</h4>
+                            </div>
+                            <p class="resource-description">
+                                Médaille d'or aux Jeux Africains 1978 (Alger)
+                            </p>
+                            <div class="resource-stats">
+                                <span>1978</span>
+                                <span>Or</span>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-header">
+                                <h4 class="resource-title">Championnat Arabe</h4>
+                            </div>
+                            <p class="resource-description">
+                                3 titres de champion arabe (1992, 1998, 2004)
+                            </p>
+                            <div class="resource-stats">
+                                <span>3 titres</span>
+                                <span>Arabe</span>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-header">
+                                <h4 class="resource-title">GS Pétroliers</h4>
+                            </div>
+                            <p class="resource-description">
+                                16 championnats d'Algérie, 10 coupes d'Algérie
+                            </p>
+                            <div class="resource-stats">
+                                <span>Légende</span>
+                                <span>Record</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievement-description" style="margin-top: 30px;">
+                        <h5>Un Sport en Développement</h5>
+                        <p>
+                            Le handball algérien a connu son âge d'or dans les années 80 et 90 avec 
+                            cinq participations olympiques consécutives. Bien que moins médiatique que 
+                            le football, ce sport conserve une base populaire solide et continue de 
+                            former de jeunes talents.
+                        </p>
+                        <p>
+                            Le GS Pétroliers, basé à Mascara, est le club le plus titré du pays et 
+                            représente régulièrement l'Algérie en compétitions africaines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Judo -->
+            <div class="medals-section fade-in" id="judo">
+                <div class="section-header">
+                    <h3>Judo Algérien</h3>
+                    <p>L'excellence sur les tatamis internationaux</p>
+                </div>
+
+                <div class="sport-profile">
+                    <div class="profile-header">
+                        <div class="profile-info">
+                            <p><strong>Première médaille mondiale :</strong> 1989 (Belgrade)</p>
+                            <p><strong>Total médailles africaines :</strong> 150+ médailles</p>
+                            <p><strong>Meilleure catégorie :</strong> -73kg et -90kg</p>
+                        </div>
+                    </div>
+
+                    <!-- Tableau (Consigne 11) -->
+                    <div class="table-container">
+                        <table class="medals-table">
+                            <thead>
+                                <tr>
+                                    <th>Judoka</th>
+                                    <th>Catégorie</th>
+                                    <th>Palmarès</th>
+                                    <th>Année</th>
+                                    <th>Compétition</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Amar Benikhlef</td>
+                                    <td>-90kg</td>
+                                    <td>Champion du Monde</td>
+                                    <td>2009</td>
+                                    <td>Rotterdam</td>
+                                </tr>
+                                <tr>
+                                    <td>Larbi Benboudaoud</td>
+                                    <td>-66kg</td>
+                                    <td>Vice-champion Olympique</td>
+                                    <td>2000</td>
+                                    <td>Sydney</td>
+                                </tr>
+                                <tr>
+                                    <td>Sonia Asselah</td>
+                                    <td>+78kg</td>
+                                    <td>Championne d'Afrique</td>
+                                    <td>2016</td>
+                                    <td>Tunis</td>
+                                </tr>
+                                <tr>
+                                    <td>Ali Idir</td>
+                                    <td>-73kg</td>
+                                    <td>Champion du Monde junior</td>
+                                    <td>2014</td>
+                                    <td>Miami</td>
+                                </tr>
+                                <tr>
+                                    <td>Houd Zourdani</td>
+                                    <td>-81kg</td>
+                                    <td>Médaille de bronze mondiale</td>
+                                    <td>2017</td>
+                                    <td>Budapest</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="achievement-description">
+                        <h5>Une Tradition de l'Art Martial</h5>
+                        <p>
+                            Le judo algérien est l'un des plus performants d'Afrique, avec des judokas 
+                            régulièrement sur les podiums des championnats continentaux et mondiaux.
+                        </p>
+                        <p>
+                            Amar Benikhlef est entré dans l'histoire en devenant champion du monde en 2009, 
+                            tandis que Larbi Benboudaoud a frôlé l'or olympique en 2000. Ces performances 
+                            ont inspiré toute une génération de jeunes judokas algériens.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Volley-ball -->
+            <div class="presentation fade-in" id="volley">
+                <div class="section-intro">
+                    <h2>Volley-ball Algérien</h2>
+                    <p>
+                        Excellence féminine et développement masculin
+                    </p>
+                </div>
+
+                <div class="content-cards">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Volley-ball Féminin</h3>
+                            <p class="card-description">
+                                L'une des meilleures équipes d'Afrique
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <strong>Championne d'Afrique :</strong> 6 fois (1989, 2009, 2011, 2013, 2015, 2017)<br />
+                                <strong>Participation olympique :</strong> 2000, 2012, 2016<br />
+                                <strong>Classement mondial :</strong> Top 15 africain
+                            </p>
+                            <p>
+                                L'équipe féminine est dominante sur le continent avec 
+                                six titres continentaux.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Volley-ball Masculin</h3>
+                            <p class="card-description">
+                                Une équipe en progression constante
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <strong>Champion d'Afrique :</strong> 2 fois (1993, 2001)<br />
+                                <strong>Jeux Africains :</strong> Médaille d'or 1978<br />
+                                <strong>Clubs performants :</strong> NR Bordj Bou Arreridj
+                            </p>
+                            <p>
+                                L'équipe masculine a remporté deux titres continentaux 
+                                et participe régulièrement aux phases finales.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Beach-volley</h3>
+                            <p class="card-description">
+                                Nouvelle discipline en développement
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <strong>Compétitions africaines :</strong> Participations régulières<br />
+                                <strong>Infrastructures :</strong> Terrains à Alger, Oran, Annaba<br />
+                                <strong>Jeux Méditerranéens :</strong> Représentation algérienne
+                            </p>
+                            <p>
+                                Le beach-volley gagne en popularité grâce aux plages 
+                                algériennes et aux compétitions locales.
+                            </p>
+                            <!-- Consigne 10 : Lien vers site international -->
+                            <p style="margin-top:15px; font-size:0.9em;">
+                                <a href="https://www.fivb.com" target="_blank" rel="noopener noreferrer">
+                                    Fédération Internationale de Volley-ball
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Affichage heure (Consigne 13) -->
+            <div class="time-display fade-in" id="timeDisplay">
+                <div class="time-container">
+                    <div class="time-content">
+                        <div class="time-label">Date et heure actuelles</div>
+                        <div class="time-value" id="currentTime">Chargement de l'heure...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <div class="footer-logo">SA</div>
+                        <div class="footer-brand-info">
+                            <h4 class="footer-title">Autres Sports Algériens</h4>
+                            <p class="footer-subtitle">Diversité et Excellence</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Découverte des multiples disciplines sportives où l'Algérie 
+                        brille au niveau continental et international, au-delà du football.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <div class="footer-nav-links">
+                        <a href="index.html" class="footer-link">
+                            <span>Accueil</span>
+                        </a>
+                        <a href="football.xhtml" class="footer-link">
+                            <span>Football</span>
+                        </a>
+                        <a href="autres-sports.xhtml" class="footer-link">
+                            <span>Autres Sports</span>
+                        </a>
+                        <a href="athletes.xhtml" class="footer-link">
+                            <span>Athlètes</span>
+                        </a>
+                        <a href="formulaire-contact.xhtml" class="footer-link">
+                            <span>Formulaire</span>
+                        </a>
+                        <a href="canvas.xhtml" class="footer-link">
+                            <span>Canvas</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact &amp; Infos</h4>
+                    <div class="contact-info">
+                        <a href="formulaire-contact.xhtml" class="contact-link">
+                            <span>Formulaire de contact</span>
+                        </a>
+                        <a href="mailto:sports@sport-algerien.dz" class="contact-link">
+                            <span>sports@sport-algerien.dz</span>
+                        </a>
+                        <div class="contact-item">
+                            <span>Projet académique L1 Info - Université de Bourgogne</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation entre pages (Consigne 8) -->
+            <div class="page-navigation">
+                <button class="nav-prev" onclick="goToPreviousPage();">
+                    <span class="nav-icon">←</span>
+                    <span class="nav-text">Page précédente</span>
+                </button>
+                
+                <a href="#" class="nav-top">
+                    <span class="nav-icon">↑</span>
+                    <span class="nav-text">Haut de page</span>
+                </a>
+                
+                <button class="nav-next" onclick="goToNextPage();">
+                    <span class="nav-text">Page suivante</span>
+                    <span class="nav-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2025 Chanez Zouina Dekimeche - Projet Web L1 - Tous droits réservés</p>
+                    <div class="validation-badges">
+                        <span class="badge">✓ XHTML 1.0 Strict</span>
+                        <span class="badge">✓ CSS Level 3</span>
+                        <span class="badge">✓ Diversité Sportive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

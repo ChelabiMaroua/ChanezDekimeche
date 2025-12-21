@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+    <!-- CONSIGNE 12 : Balises meta avec auteur -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Chanez Dekimeche" />
+    <meta name="description" content="Page Athlètes - Champions algériens et leurs performances historiques" />
+    
+    <title>Athlètes Algériens | Champions Olympiques</title>
+    
+    <!-- CONSIGNE 14 : Feuille de style -->
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+    <div class="site-header" id="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="brand">
+                    <div class="brand-logo">SA</div>
+                    <div class="brand-name">Sport<span>Algérien</span></div>
+                </a>
+
+                <!-- Navigation principale (Consigne 6 : boutons) -->
+                <div class="primary-nav">
+                    <button class="nav-btn" onclick="window.location.href='index.html'">
+                        <span class="btn-text">Accueil</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='football.xhtml'">
+                        <span class="btn-text">Football</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='autres-sports.xhtml'">
+                        <span class="btn-text">Autres Sports</span>
+                    </button>
+                    
+                    <button class="nav-btn active" onclick="window.location.href='athletes.xhtml'">
+                        <span class="btn-text">Athlètes</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='formulaire-contact.xhtml'">
+                        <span class="btn-text">Formulaire</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='canvas.xhtml'">
+                        <span class="btn-text">Canvas</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <!-- Section Sommaire (Consigne 4 et 6) -->
+            <div class="presentation fade-in" id="sommaire">
+                <div class="section-intro">
+                    <h2>Sommaire des Athlètes Légendaires</h2>
+                    <p>
+                        Explorez les parcours exceptionnels des champions algériens qui ont hissé 
+                        les couleurs nationales au plus haut niveau international.
+                    </p>
+                </div>
+
+                <!-- Navigation rapide avec images (Consigne 6 : images cliquables) -->
+                <div class="content-cards">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Hassiba Boulmerka</h3>
+                            <p class="card-description">
+                                Pionnière de l'athlétisme féminin africain
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#boulmerka">
+                                <img src="../media/images/boumerka.jpg" alt="Hassiba Boulmerka, championne olympique" style="width:100%; border-radius:8px; margin-bottom:15px;" />
+                            </a>
+                            <a href="#boulmerka" class="btn btn-secondary">Découvrir →</a>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Rabah Madjer</h3>
+                            <p class="card-description">
+                                Légende du football algérien et africain
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#madjer">
+                                <img src="../media/images/madjer.jpg" alt="Rabah Madjer, légende du football" style="width:100%; border-radius:8px; margin-bottom:15px;" />
+                            </a>
+                            <a href="#madjer" class="btn btn-secondary">Explorer →</a>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Noureddine Morceli</h3>
+                            <p class="card-description">
+                                Maître du demi-fond, recordman du monde
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#morceli">
+                                <img src="../media/images/morceli.jpeg" alt="Noureddine Morceli, champion du monde" style="width:100%; border-radius:8px; margin-bottom:15px;" />
+                            </a>
+                            <a href="#morceli" class="btn btn-secondary">Voir plus →</a>
+                            
+                            <!-- Consigne 10 : Lien vers site international -->
+                            <p style="margin-top:15px; font-size:0.9em;">
+                                <a href="https://www.worldathletics.org" target="_blank" rel="noopener noreferrer">
+                                    World Athletics
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1: Hassiba Boulmerka -->
+            <div class="medals-section fade-in" id="boulmerka">
+                <div class="section-header">
+                    <h3>🏃 Hassiba Boulmerka</h3>
+                    <p>Pionnière de l'athlétisme féminin africain</p>
+                </div>
+
+                <div class="athlete-profile">
+                    <div class="profile-header">
+                        <div class="profile-info">
+                            <p><strong>Sport :</strong> Athlétisme (1500m)</p>
+                            <p><strong>Naissance :</strong> 10 juillet 1968 à Constantine</p>
+                            <p><strong>Période active :</strong> 1988-1997</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-content">
+                        <h4>Palmarès Exceptionnel</h4>
+                        
+                        <!-- Tableau (Consigne 11) -->
+                        <div class="table-container">
+                            <table class="medals-table">
+                                <thead>
+                                    <tr>
+                                        <th>Compétition</th>
+                                        <th>Année</th>
+                                        <th>Lieu</th>
+                                        <th>Performance</th>
+                                        <th>Résultat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Championnats du Monde</td>
+                                        <td>1991</td>
+                                        <td>Tokyo, Japon</td>
+                                        <td>1500m</td>
+                                        <td><span class="medal-count gold">🥇 Or</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jeux Olympiques</td>
+                                        <td>1992</td>
+                                        <td>Barcelone, Espagne</td>
+                                        <td>1500m</td>
+                                        <td><span class="medal-count gold">🥇 Or</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Championnats du Monde</td>
+                                        <td>1995</td>
+                                        <td>Göteborg, Suède</td>
+                                        <td>1500m</td>
+                                        <td><span class="medal-count gold">🥇 Or</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Championnats d'Afrique</td>
+                                        <td>1989</td>
+                                        <td>Lagos, Nigeria</td>
+                                        <td>800m</td>
+                                        <td><span class="medal-count gold">🥇 Or</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jeux Méditerranéens</td>
+                                        <td>1991</td>
+                                        <td>Athènes, Grèce</td>
+                                        <td>800m</td>
+                                        <td><span class="medal-count gold">🥇 Or</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="achievement-description">
+                            <h5>Histoire et Héritage</h5>
+                            <p>
+                                Hassiba Boulmerka est entrée dans l'histoire en devenant la première femme algérienne 
+                                et africaine à remporter une médaille d'or olympique en athlétisme. Sa victoire à Barcelone 
+                                en 1992 a brisé les barrières culturelles et a inspiré toute une génération de sportives.
+                            </p>
+                            <p>
+                                En plus de ses succès sportifs, elle a été élue "Athlète de l'année" par le magazine 
+                                Track &amp; Field News en 1991 et a été membre du Comité International Olympique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Rabah Madjer -->
+            <div class="resources-section fade-in" id="madjer">
+                <div class="section-header">
+                    <div>
+                        <h3 class="section-title">⚽ Rabah Madjer</h3>
+                        <p class="section-subtitle">Légende du football algérien et africain</p>
+                    </div>
+                </div>
+
+                <div class="athlete-profile">
+                    <div class="profile-header">
+                        <div class="profile-info">
+                            <p><strong>Sport :</strong> Football (Attaquant)</p>
+                            <p><strong>Naissance :</strong> 15 février 1958 à Hussein Dey</p>
+                            <p><strong>Carrière :</strong> 1975-1992</p>
+                        </div>
+                    </div>
+
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <div class="resource-header">
+                                <h4 class="resource-title">CAN 1990</h4>
+                            </div>
+                            <p class="resource-description">
+                                Champion d'Afrique avec l'équipe nationale algérienne
+                            </p>
+                            <div class="resource-stats">
+                                <span>Vainqueur</span>
+                                <span>3 buts</span>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-header">
+                                <h4 class="resource-title">Coupe d'Europe 1987</h4>
+                            </div>
+                            <p class="resource-description">
+                                Vainqueur avec le FC Porto, but légendaire en talonnade
+                            </p>
+                            <div class="resource-stats">
+                                <span>Finale</span>
+                                <span>But décisif</span>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-header">
+                                <h4 class="resource-title">Coupe Intercontinentale</h4>
+                            </div>
+                            <p class="resource-description">
+                                Vainqueur avec le FC Porto contre Peñarol
+                            </p>
+                            <div class="resource-stats">
+                                <span>1987</span>
+                                <span>Champion</span>
+                            </div>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-header">
+                                <h4 class="resource-title">Ballon d'Or Africain</h4>
+                            </div>
+                            <p class="resource-description">
+                                Meilleur joueur africain de l'année 1987
+                            </p>
+                            <div class="resource-stats">
+                                <span>Récompense</span>
+                                <span>Prestigieux</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievement-description" style="margin-top: 30px;">
+                        <h5>Le But Légendaire</h5>
+                        <p>
+                            Rabah Madjer est entré dans la légende du football lors de la finale de la Coupe d'Europe 
+                            1987 avec le FC Porto. Alors que son équipe était menée 1-0 face au Bayern Munich, 
+                            Madjer a égalisé d'une sublime talonnade à la 77ème minute, avant que Porto ne remporte 
+                            le match 2-1.
+                        </p>
+                        <p>
+                            Avec l'équipe nationale, il a été capitaine des Fennecs lors de leur premier titre de 
+                            champion d'Afrique en 1990, marquant 3 buts durant le tournoi.
+                        </p>
+                        
+                        <div class="media-item">
+                            <video class="media-preview" controls="controls" poster="../media/images/madjer.jpg">
+                                <source src="../media/video/madjerbut.mp4" type="video/mp4" />
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+                            <div class="media-info">
+                                <h4 class="media-title">Vidéo : Moments Historiques</h4>
+                                <p class="media-description">
+                                   MADJER - TOUT SAVOIR SUR L'HISTOIRE D'UN BUT LÉGENDAIRE
+                                </p>
+                                <div class="media-controls">
+                                    <button class="media-btn" onclick="playVideo()">▶ Lecture</button>
+                                    <button class="media-btn" onclick="pauseVideo()">⏸ Pause</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Noureddine Morceli -->
+            <div class="medals-section fade-in" id="morceli">
+                <div class="section-header">
+                    <h3>🏅 Noureddine Morceli</h3>
+                    <p>Maître du demi-fond, triple champion du monde</p>
+                </div>
+
+                <div class="athlete-profile">
+                    <div class="profile-header">
+                        <div class="profile-info">
+                            <p><strong>Sport :</strong> Athlétisme (800m, 1500m, Mile)</p>
+                            <p><strong>Naissance :</strong> 28 février 1970 à Ténès</p>
+                            <p><strong>Période active :</strong> 1988-2000</p>
+                        </div>
+                    </div>
+
+                    <!-- Tableau des records (Consigne 11) -->
+                    <div class="table-container">
+                        <table class="medals-table">
+                            <thead>
+                                <tr>
+                                    <th>Distance</th>
+                                    <th>Temps</th>
+                                    <th>Date</th>
+                                    <th>Lieu</th>
+                                    <th>Durée du Record</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1500m</td>
+                                    <td>3:27.37</td>
+                                    <td>12 juillet 1995</td>
+                                    <td>Nice, France</td>
+                                    <td>1995-1998 (3 ans)</td>
+                                </tr>
+                                <tr>
+                                    <td>Mile</td>
+                                    <td>3:44.39</td>
+                                    <td>5 septembre 1993</td>
+                                    <td>Rieti, Italie</td>
+                                    <td>1993-1999 (6 ans)</td>
+                                </tr>
+                                <tr>
+                                    <td>2000m</td>
+                                    <td>4:47.88</td>
+                                    <td>3 juillet 1995</td>
+                                    <td>Paris, France</td>
+                                    <td>Record du monde</td>
+                                </tr>
+                                <tr>
+                                    <td>3000m</td>
+                                    <td>7:25.11</td>
+                                    <td>2 août 1994</td>
+                                    <td>Monaco</td>
+                                    <td>1994-1995</td>
+                                </tr>
+                                <tr>
+                                    <td>2 Miles</td>
+                                    <td>8:06.34</td>
+                                    <td>16 septembre 1994</td>
+                                    <td>Berlin, Allemagne</td>
+                                    <td>Record du monde</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="achievement-description">
+                        <h5>Dominance Mondiale</h5>
+                        <p>
+                            Noureddine Morceli a dominé le demi-fond mondial pendant près d'une décennie. 
+                            Champion olympique en 1996 à Atlanta, triple champion du monde (1991, 1993, 1995), 
+                            il a battu 11 records du monde au cours de sa carrière.
+                        </p>
+                        <p>
+                            Son style de course agressif, prenant souvent les commandes dès le début de la course, 
+                            a révolutionné la stratégie du 1500m. Il reste l'un des seuls athlètes à avoir détenu 
+                            simultanément les records du monde du 1500m, du mile et du 2000m.
+                        </p>
+                        
+                        <!-- Consigne 10 : Lien vers site international -->
+                        <div style="margin-top: 20px; text-align: right;">
+                            <a href="https://www.olympic.org/noureddine-morceli" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="external-link">
+                                Profil officiel sur Olympic.org ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Taoufik Makhloufi -->
+            <div class="presentation fade-in" id="makhloufi">
+                <div class="section-intro">
+                    <h2>🥇 Taoufik Makhloufi</h2>
+                    <p>
+                        Champion olympique et mondial, spécialiste du 800m et 1500m
+                    </p>
+                </div>
+
+                <div class="content-cards">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Jeux Olympiques 2012</h3>
+                            <p class="card-description">
+                                Médaille d'or sur 1500m à Londres
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <strong>Performance :</strong> 3:34.08<br />
+                                <strong>Lieu :</strong> Stade Olympique, Londres<br />
+                                <strong>Date :</strong> 7 août 2012
+                            </p>
+                            <p>
+                                Makhloufi remporte l'or avec autorité, devançant le favori 
+                                Asbel Kiprop du Kenya.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Championnats du Monde 2017</h3>
+                            <p class="card-description">
+                                Titre mondial sur 1500m à Londres
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <strong>Performance :</strong> 3:33.61<br />
+                                <strong>Lieu :</strong> Stade Olympique, Londres<br />
+                                <strong>Date :</strong> 13 août 2017
+                            </p>
+                            <p>
+                                Cinq ans après son titre olympique au même stade, 
+                                il devient champion du monde.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Jeux Olympiques 2016</h3>
+                            <p class="card-description">
+                                Médaille d'argent sur 800m à Rio
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <strong>Performance :</strong> 1:42.61 (Record national)<br />
+                                <strong>Lieu :</strong> Stade Nilton Santos, Rio<br />
+                                <strong>Date :</strong> 15 août 2016
+                            </p>
+                            <p>
+                                Record personnel et médaille d'argent derrière 
+                                David Rudisha.
+                            </p>
+                            <!-- Consigne 10 : Lien vers site international -->
+                            <p style="margin-top:15px; font-size:0.9em;">
+                                <a href="https://www.worldathletics.org/athletes/algeria/taoufik-makhloufi-14181354" 
+                                   target="_blank" rel="noopener noreferrer">
+                                    Profil World Athletics
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consigne 5 : Vidéo -->
+                <div class="media-section fade-in" style="margin-top: 30px;">
+                    <div class="section-header">
+                        <h4>Vidéo : Finale du 1500m aux JO 2012</h4>
+                    </div>
+                    <div class="media-grid">
+                        <div class="media-item">
+                            <!-- Lien YouTube avec image -->
+                            <a href="https://www.youtube.com/watch?v=VIDEO_ID" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="video-link">
+                                <div class="video-thumbnail">
+                                    <img src="../media/images/makhloufi-jo2012.jpg" 
+                                         alt="Taoufik Makhloufi - Finale 1500m JO 2012"
+                                         class="media-preview" />
+                                </div>
+                            </a>
+                            <div class="media-info">
+                                <p class="media-description">
+                                    Course complète de la finale du 1500m masculin aux Jeux Olympiques 2012, 
+                                    où Taoufik Makhloufi remporte la médaille d'or pour l'Algérie.
+                                </p>
+                                <a href="https://www.youtube.com/watch?v=VIDEO_ID" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   class="btn btn-secondary">
+                                    Regarder sur YouTube ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Affichage heure (Consigne 13) -->
+            <div class="time-display fade-in" id="timeDisplay">
+                <div class="time-container">
+                    <div class="time-content">
+                        <div class="time-label">Date et heure actuelles</div>
+                        <div class="time-value" id="currentTime">Chargement de l'heure...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <div class="footer-logo">SA</div>
+                        <div class="footer-brand-info">
+                            <h4 class="footer-title">Athlètes Algériens</h4>
+                            <p class="footer-subtitle">Légendes du Sport</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Hommage aux champions algériens qui ont marqué l'histoire du sport mondial 
+                        par leurs performances exceptionnelles et leur détermination.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <div class="footer-nav-links">
+                        <a href="index.html" class="footer-link">
+                            <span>Accueil</span>
+                        </a>
+                        <a href="football.xhtml" class="footer-link">
+                            <span>Football</span>
+                        </a>
+                        <a href="autres-sports.xhtml" class="footer-link">
+                            <span>Autres Sports</span>
+                        </a>
+                        <a href="athletes.xhtml" class="footer-link">
+                            <span>Athlètes</span>
+                        </a>
+                        <a href="formulaire-contact.xhtml" class="footer-link">
+                            <span>Formulaire</span>
+                        </a>
+                        <a href="canvas.xhtml" class="footer-link">
+                            <span>Canvas</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact &amp; Infos</h4>
+                    <div class="contact-info">
+                        <a href="formulaire-contact.xhtml" class="contact-link">
+                            <span>Formulaire de contact</span>
+                        </a>
+                        <a href="mailto:athletes@sport-algerien.dz" class="contact-link">
+                            <span>athletes@sport-algerien.dz</span>
+                        </a>
+                        <div class="contact-item">
+                            <span>Projet académique L1 Info - Université de Bourgogne</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation entre pages (Consigne 8) -->
+            <div class="page-navigation">
+                <button class="nav-prev" onclick="goToPreviousPage()">
+                    <span class="nav-icon">←</span>
+                    <span class="nav-text">Page précédente</span>
+                </button>
+                
+                <a href="#" class="nav-top">
+                    <span class="nav-icon">↑</span>
+                    <span class="nav-text">Haut de page</span>
+                </a>
+                
+                <button class="nav-next" onclick="goToNextPage()">
+                    <span class="nav-text">Page suivante</span>
+                    <span class="nav-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2025 Chanez Zouina Dekimeche - Projet Web L1 - Tous droits réservés</p>
+                    <div class="validation-badges">
+                        <span class="badge">✓ XHTML 1.0 Strict</span>
+                        <span class="badge">✓ CSS Level 3</span>
+                        <span class="badge">✓ Champions Algériens</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

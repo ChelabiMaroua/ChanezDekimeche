@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Chanez Dekimeche" />
+    <meta name="description" content="Formulaire de contact - Sport Algérien" />
+    
+    <title>Formulaire de Contact | Sport Algérien</title>
+    
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
+<body>
+    <div class="site-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="brand">
+                    <div class="brand-logo">SA</div>
+                    <div class="brand-name">Sport<span>Algérien</span></div>
+                </a>
+
+                <!-- Navigation principale -->
+                <div class="primary-nav">
+                    <button class="nav-btn" onclick="window.location.href='index.html';">
+                        <span class="btn-text">Accueil</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='football.xhtml';">
+                        <span class="btn-text">Football</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='autres-sports.xhtml';">
+                        <span class="btn-text">Autres Sports</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='athletes.xhtml';">
+                        <span class="btn-text">Athlètes</span>
+                    </button>
+                    
+                    <button class="nav-btn active" onclick="window.location.href='formulaire-contact.xhtml';">
+                        <span class="btn-text">Formulaire</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='canvas.xhtml';">
+                        <span class="btn-text">Canvas</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <div class="container">
+            <!-- Section formulaire (Consigne 4 et 7) -->
+            <div class="presentation fade-in" id="sommaire">
+                <div class="section-intro">
+                    <h2>Formulaire de Contact</h2>
+                    <p>
+                        Remplissez ce formulaire pour nous contacter, poser vos questions 
+                        ou vous inscrire à notre newsletter sportive. Tous les champs marqués 
+                        d'un astérisque (*) sont obligatoires.
+                    </p>
+                </div>
+
+                <!-- Formulaire principal (Consigne 7) -->
+                <div class="formulaire-section fade-in">
+                    <div class="section-header">
+                        <h3>Inscription Newsletter Sportive</h3>
+                        <p>Recevez les dernières actualités du sport algérien</p>
+                    </div>
+
+                    <form id="contactForm" action="#" method="post" onsubmit="return validateForm();">
+                        <div class="form-grid">
+                            <!-- Ligne 1 : Nom et Email -->
+                            <div class="form-group">
+                                <label for="nom">Nom complet *</label>
+                                <input type="text" id="nom" name="nom" placeholder="Votre nom et prénom" 
+                                       required="required" class="form-input" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Adresse email *</label>
+                                <input type="email" id="email" name="email" placeholder="exemple@email.com" 
+                                       required="required" class="form-input" />
+                            </div>
+
+                            <!-- Ligne 2 : Téléphone et Date -->
+                            <div class="form-group">
+                                <label for="telephone">Numéro de téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" 
+                                       placeholder="06 12 34 56 78" pattern="[0-9]{10}" 
+                                       class="form-input" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="date">Date de naissance</label>
+                                <input type="date" id="date" name="date" class="form-input" />
+                            </div>
+
+                            <!-- Ligne 3 : Sport et Couleur -->
+                            <div class="form-group">
+                                <label for="sport">Sport préféré *</label>
+                                <select id="sport" name="sport" required="required" class="form-select">
+                                    <option value="">Choisissez un sport</option>
+                                    <option value="football">Football</option>
+                                    <option value="athletisme">Athlétisme</option>
+                                    <option value="handball">Handball</option>
+                                    <option value="judo">Judo</option>
+                                    <option value="volley">Volley-ball</option>
+                                    <option value="autres">Autres sports</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="couleur">Couleur préférée</label>
+                                <div class="color-picker">
+                                    <input type="color" id="couleur" name="couleur" value="#006233" 
+                                           class="form-color" />
+                                    <span class="color-value">Vert algérien</span>
+                                </div>
+                            </div>
+
+                            <!-- Ligne 4 : Message (pleine largeur) -->
+                            <div class="form-group full-width">
+                                <label for="message">Votre message</label>
+                                <textarea id="message" name="message" rows="4" 
+                                          placeholder="Partagez vos commentaires, suggestions ou questions..."
+                                          class="form-textarea"></textarea>
+                            </div>
+
+                            <!-- Ligne 5 : Checkbox -->
+                            <div class="form-group full-width">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="newsletter" name="newsletter" 
+                                           checked="checked" class="form-checkbox" />
+                                    <label for="newsletter" class="checkbox-label">
+                                        Je souhaite recevoir la newsletter mensuelle du sport algérien
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Ligne 6 : Boutons (Consigne 7) -->
+                            <div class="form-group full-width form-buttons">
+                                <!-- Bouton Reset avec style spécial -->
+                                <button type="reset" class="btn-reset">
+                                    <span class="btn-icon">↻</span>
+                                    <span class="btn-text">Effacer le formulaire</span>
+                                </button>
+                                
+                                <!-- Bouton Submit avec style spécial -->
+                                <button type="submit" class="btn-submit">
+                                    <span class="btn-icon">✓</span>
+                                    <span class="btn-text">Envoyer le formulaire</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Message de validation -->
+                    <div id="messageValidation" class="validation-message">
+                        <div class="validation-icon">✓</div>
+                        <div class="validation-text">
+                            <h4>Formulaire envoyé avec succès !</h4>
+                            <p>Merci pour votre message. Nous vous répondrons dans les plus brefs délais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section tableau des statistiques (Consigne 11) -->
+            <div class="medals-section fade-in">
+                <div class="section-header">
+                    <h3>Statistiques des Inscriptions</h3>
+                    <p>Préférences sportives de nos visiteurs</p>
+                </div>
+
+                <div class="table-container">
+                    <table class="medals-table">
+                        <thead>
+                            <tr>
+                                <th>Sport</th>
+                                <th>Pourcentage</th>
+                                <th>Inscrits</th>
+                                <th>Tendance</th>
+                                <th>Popularité</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Football</td>
+                                <td>45%</td>
+                                <td>1,250</td>
+                                <td><span class="trend up">↑ En hausse</span></td>
+                                <td><div class="popularity-bar" style="width: 90%;"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Athlétisme</td>
+                                <td>25%</td>
+                                <td>695</td>
+                                <td><span class="trend stable">→ Stable</span></td>
+                                <td><div class="popularity-bar" style="width: 50%;"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Judo</td>
+                                <td>12%</td>
+                                <td>333</td>
+                                <td><span class="trend up">↑ En hausse</span></td>
+                                <td><div class="popularity-bar" style="width: 24%;"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Handball</td>
+                                <td>8%</td>
+                                <td>222</td>
+                                <td><span class="trend stable">→ Stable</span></td>
+                                <td><div class="popularity-bar" style="width: 16%;"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Volley-ball</td>
+                                <td>6%</td>
+                                <td>167</td>
+                                <td><span class="trend down">↓ En baisse</span></td>
+                                <td><div class="popularity-bar" style="width: 12%;"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Autres sports</td>
+                                <td>4%</td>
+                                <td>111</td>
+                                <td><span class="trend up">↑ En hausse</span></td>
+                                <td><div class="popularity-bar" style="width: 8%;"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Affichage heure (Consigne 13) -->
+            <div class="time-display fade-in" id="timeDisplay">
+                <div class="time-container">
+                    <div class="time-content">
+                        <div class="time-label">Date et heure actuelles</div>
+                        <div class="time-value" id="currentTime">Chargement de l'heure...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <div class="footer-logo">SA</div>
+                        <div class="footer-brand-info">
+                            <h4 class="footer-title">Formulaire de Contact</h4>
+                            <p class="footer-subtitle">Restez connecté avec nous</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Un projet académique réalisé dans le cadre du module Info1Rb. 
+                        Contactez-nous pour partager vos idées ou suggestions.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <div class="footer-nav-links">
+                        <a href="index.html" class="footer-link">
+                            <span>Accueil</span>
+                        </a>
+                        <a href="football.xhtml" class="footer-link">
+                            <span>Football</span>
+                        </a>
+                        <a href="autres-sports.xhtml" class="footer-link">
+                            <span>Autres Sports</span>
+                        </a>
+                        <a href="athletes.xhtml" class="footer-link">
+                            <span>Athlètes</span>
+                        </a>
+                        <a href="formulaire-contact.xhtml" class="footer-link">
+                            <span>Formulaire</span>
+                        </a>
+                        <a href="canvas.xhtml" class="footer-link">
+                            <span>Canvas</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact &amp; Infos</h4>
+                    <div class="contact-info">
+                        <a href="formulaire-contact.xhtml" class="contact-link">
+                            <span>Formulaire de contact</span>
+                        </a>
+                        <a href="mailto:contact@sport-algerien.dz" class="contact-link">
+                            <span>contact@sport-algerien.dz</span>
+                        </a>
+                        <div class="contact-item">
+                            <span>Université de Bourgogne - L1 Informatique</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>Module Info1Rb - Projet 2025/2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation entre pages (Consigne 8) -->
+            <div class="page-navigation">
+                <button class="nav-prev" onclick="goToPreviousPage();">
+                    <span class="nav-icon">←</span>
+                    <span class="nav-text">Page précédente</span>
+                </button>
+                
+                <a href="#" class="nav-top">
+                    <span class="nav-icon">↑</span>
+                    <span class="nav-text">Haut de page</span>
+                </a>
+                
+                <button class="nav-next" onclick="goToNextPage();">
+                    <span class="nav-text">Page suivante</span>
+                    <span class="nav-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2025 Chanez Zouina Dekimeche - Projet Web L1 - Tous droits réservés</p>
+                    <div class="validation-badges">
+                        <span class="badge">✓ Formulaire Validé</span>
+                        <span class="badge">✓ CSS Level 3</span>
+                        <span class="badge">✓ Accessibilité</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

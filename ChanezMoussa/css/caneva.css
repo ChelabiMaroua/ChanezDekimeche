@@ -1,0 +1,318 @@
+/* ============================================
+   STYLES MINIMALISTES POUR LA PAGE CANVAS
+   ============================================ */
+
+.canvas-container {
+    background: #FFFFFF;
+    padding: 40px 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.canvas-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.canvas-wrapper {
+    padding: 30px;
+    display: inline-block;
+    position: relative;
+}
+
+#sportLogoCanvas {
+    border: 1px solid #F0F0F0;
+    border-radius: 2px;
+    background: #FFFFFF;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Contrôles minimalistes */
+.canvas-controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.canvas-controls .btn {
+    padding: 10px 20px;
+    background: #FFFFFF;
+    color: #2D3748;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.canvas-controls .btn:hover {
+    background: #F8FAFC;
+    border-color: #CBD5E0;
+    color: #1A202C;
+    transform: translateY(-1px);
+}
+
+.canvas-controls .btn:active {
+    transform: translateY(0);
+}
+
+/* Explication minimaliste */
+.explanation-section {
+    margin: 60px 0;
+    padding: 40px;
+    background: #F8FAFC;
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.explanation-section h3 {
+    font-size: 20px;
+    font-weight: 300;
+    color: #2D3748;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.construction-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.step {
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border-left: 3px solid #006233;
+    transition: all 0.2s ease;
+}
+
+.step:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.step h4 {
+    margin-top: 0;
+    color: #2D3748;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #4A5568;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.code-example {
+    background: #1A202C;
+    color: #E2E8F0;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 12px;
+    font-family: 'Fira Code', 'Monaco', monospace;
+    font-size: 12px;
+    overflow-x: auto;
+    border: 1px solid #2D3748;
+}
+
+.code-example code {
+    color: #81E6D9;
+}
+
+/* Section code source minimaliste */
+.code-section {
+    margin: 60px 0;
+}
+
+.code-section h3 {
+    font-size: 20px;
+    font-weight: 300;
+    color: #2D3748;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.code-container {
+    background: #1A202C;
+    border-radius: 4px;
+    overflow: hidden;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #2D3748;
+}
+
+.code-container pre {
+    margin: 0;
+    padding: 25px;
+    font-family: 'Fira Code', 'Monaco', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #CBD5E0;
+}
+
+.code-container .function {
+    color: #90CDF4;
+}
+
+.code-container .keyword {
+    color: #F687B3;
+}
+
+.code-container .string {
+    color: #9AE6B4;
+}
+
+.code-container .comment {
+    color: #718096;
+}
+
+.code-container .number {
+    color: #F6AD55;
+}
+
+/* Section technique épurée */
+.tech-section {
+    margin: 60px 0;
+    padding: 40px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #E2E8F0;
+}
+
+.tech-section h3 {
+    font-size: 20px;
+    font-weight: 300;
+    color: #2D3748;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.tech-card {
+    padding: 20px;
+    background: #F8FAFC;
+    border-radius: 4px;
+    border: 1px solid #E2E8F0;
+    transition: all 0.2s ease;
+}
+
+.tech-card:hover {
+    border-color: #CBD5E0;
+    background: #FFFFFF;
+}
+
+.tech-card h4 {
+    margin-top: 0;
+    color: #2D3748;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.tech-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.tech-card li {
+    padding: 6px 0;
+    color: #4A5568;
+    font-size: 13px;
+    border-bottom: 1px solid #EDF2F7;
+}
+
+.tech-card li:last-child {
+    border-bottom: none;
+}
+
+.tech-card code {
+    background: #EDF2F7;
+    color: #2D3748;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Responsive minimaliste */
+@media (max-width: 768px) {
+    .canvas-container {
+        padding: 20px;
+    }
+    
+    .canvas-wrapper {
+        padding: 15px;
+    }
+    
+    #sportLogoCanvas {
+        width: 100%;
+        height: auto;
+    }
+    
+    .explanation-section,
+    .tech-section {
+        padding: 20px;
+    }
+    
+    .construction-steps {
+        gap: 16px;
+    }
+    
+    .step {
+        padding: 16px;
+    }
+    
+    .canvas-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .canvas-controls .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .canvas-section h2 {
+        font-size: 20px;
+    }
+    
+    .explanation-section h3,
+    .code-section h3,
+    .tech-section h3 {
+        font-size: 18px;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .code-container pre {
+        padding: 15px;
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- CONSIGNE 12 : Balises meta avec auteur -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Chanez Dekimeche">
+    <meta name="description" content="Projet web L1 sur le sport algérien - Module Info1Rb 2025/2026">
+    
+    <title>Sport Algérien | Excellence et Performance</title>
+    
+    <!-- CONSIGNE 14 : Feuille de style -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="brand">
+                    <div class="brand-logo">SA</div>
+                    <div class="brand-name">Sport<span>Algérien</span></div>
+                </a>
+
+                <!-- Navigation principale (Consigne 6 : boutons) -->
+                <nav class="primary-nav">
+                    <button class="nav-btn active" onclick="window.location.href='index.html'">
+                        <span class="btn-text">Accueil</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='football.xhtml'">
+                        <span class="btn-text">Football</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='autres-sports.xhtml'">
+                        <span class="btn-text">Autres Sports</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='athletes.xhtml'">
+                        <span class="btn-text">Athlètes</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='formulaire-contact.xhtml'">
+                        <span class="btn-text">Formulaire</span>
+                    </button>
+                    
+                    <button class="nav-btn" onclick="window.location.href='canvas.xhtml'">
+                        <span class="btn-text">Canvas</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<!-- CONSIGNE 4 : Au moins 2 parties par page -->
+<!-- Cette section "hero" est la première partie de la page -->
+<!-- CONSIGNE 5 : Insérer au moins un objet multimédia de chaque type (image) -->
+
+<section class="hero">
+    <div class="carousel-container" id="carousel">
+        <div class="carousel-slide active">
+            <img src="../media/images/heritagedz.jpg" class="carousel-bg-image" alt="Héritage sportif algérien">
+            <div class="carousel-overlay"></div>
+            <div class="slide-content fade-in">
+                <span class="slide-badge">Excellence Sportive</span>
+                <h1 class="slide-title">L'Héritage Sportif Algérien</h1>
+                <p class="slide-description">
+                    Découvrez les champions, les victoires historiques et l'évolution du sport en Algérie 
+                    à travers un parcours d'excellence et de passion nationale.
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img src="../media/images/lesfenneschampions.jpg" class="carousel-bg-image" alt="Les Fennecs champions d'Afrique">
+            <div class="carousel-overlay"></div>
+            <div class="slide-content fade-in">
+                <span class="slide-badge">Football National</span>
+                <h1 class="slide-title">Les Fennecs Champions</h1>
+                <p class="slide-description">
+                    De la Coupe d'Afrique 1990 au triomphe de 2019, revivez les moments forts 
+                    du football algérien et ses héros légendaires.
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-slide">
+            <img src="../media/images/boumerka.jpg" class="carousel-bg-image" alt="Hassiba Boulmerka, championne olympique">
+            <div class="carousel-overlay"></div>
+            <div class="slide-content fade-in">
+                <span class="slide-badge">Athlétisme d'Élite</span>
+                <h1 class="slide-title">Performance Internationale</h1>
+                <p class="slide-description">
+                    Des pistes aux podiums olympiques, explorez le parcours des athlètes algériens 
+                    qui ont marqué l'histoire du sport mondial.
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+            <button class="control-dot active" onclick="changeSlide(0)" aria-label="Afficher slide 1"></button>
+            <button class="control-dot" onclick="changeSlide(1)" aria-label="Afficher slide 2"></button>
+            <button class="control-dot" onclick="changeSlide(2)" aria-label="Afficher slide 3"></button>
+        </div>
+    </div>
+</section>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- CONSIGNE 4 : Au moins 2 parties par page -->
+            <!-- section "présentation","contenu multemedia" , "palmarés" etc -->
+            <section class="presentation">
+                <div class="section-intro fade-in">
+                    <h2>Le Sport Algérien en Chiffres et en Victoires</h2>
+                    <p>
+                        Une exploration complète des disciplines sportives, des athlètes emblématiques 
+                        et des performances remarquables qui ont façonné l'histoire du sport en Algérie.
+                    </p>
+                </div>
+
+                <!-- Navigation principale (Consigne 6 : images cliquables comme sommaire) -->
+                <div class="content-cards">
+                    
+                    <!-- Carte 1 : Football (Consigne 9 : lien sous forme d'image + texte) -->
+                    <article class="content-card fade-in" id="football-section">
+                        <div class="card-header">
+                            <h3 class="card-title">Football National</h3>
+                            <p class="card-description">
+                                L'équipe des Fennecs, double championne d'Afrique, et les clubs historiques 
+                                qui ont marqué le football continental.
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <!-- Consigne 9 : Lien sous forme d'image -->
+                            <a href="football.xhtml">
+                                <img src="../media/images/foot.jpg" alt="Football algérien" style="width:100%; border-radius:8px; margin-bottom:15px;">
+                            </a>
+                            <!-- Consigne 9 : Lien sous forme de bouton (texte) -->
+                            <a href="football.xhtml" class="btn btn-secondary">Explorer →</a>
+                        </div>
+                    </article>
+
+                    <article class="content-card fade-in" id="multisports-section">
+                        <div class="card-header">
+                            <h3 class="card-title">Diversité Sportive</h3>
+                            <p class="card-description">
+                                Handball, judo, volley-ball et bien d'autres : explorez la richesse 
+                                et la diversité des sports pratiqués en Algérie.
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <img src="../media/images/heritagedz.jpg" alt="Diversité sportive en Algérie" style="width:100%; border-radius:8px; margin-bottom:15px;">
+                            
+                            <a href="autres-sports.xhtml" class="btn btn-secondary">Voir plus →</a>
+                            
+                            <!-- Consigne 10 : Lien vers URL nationale -->
+                            <p style="margin-top:15px; font-size:0.9em;">
+                                <a href="https://www.mjs.gov.dz">
+                                    Ministère de la Jeunesse et des Sports
+                                </a>
+                            </p>
+                        </div>
+                    </article>
+
+                     <article class="content-card fade-in" id="athletisme-section">
+                        <div class="card-header">
+                            <h3 class="card-title">Athlétisme d'Élite</h3>
+                            <p class="card-description">
+                                Des champions olympiques aux recordmen mondiaux, découvrez l'excellence 
+                                de l'athlétisme algérien sur la scène internationale.
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <img src="../media/images/boumerka.jpg" alt="Athlétisme d'élite algérien" style="width:100%; border-radius:8px; margin-bottom:15px;">
+                            
+                            <a href="athletes.xhtml" class="btn btn-secondary">Découvrir →</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section médias (Consigne 5) -->
+            <section class="media-section fade-in">
+                <div class="section-header">
+                    <h3>Contenu Multimédia</h3>
+                    <p>Images, vidéos et ressources audio</p>
+                </div>
+
+                <div class="media-grid">
+                    <!-- Vidéo -->
+                    <div class="media-item">
+                        <video class="media-preview" controls poster="../media/images/poster.jpeg">
+                            <source src="../media/video/ButBelaili.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la vidéo.
+                        </video>
+                        <div class="media-info">
+                            <h4 class="media-title">Vidéo : Moments Historiques</h4>
+                            <p class="media-description">
+                                Les plus beaux buts et actions du sport algérien en compétition internationale.
+                            </p>
+                            <div class="media-controls">
+                                <button class="media-btn" onclick="playVideo()">▶ Lecture</button>
+                                <button class="media-btn" onclick="pauseVideo()">⏸ Pause</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audio -->
+                    <div class="media-item">
+                         <img class="media-preview" src="../media/images/poster.jpeg" alt="Poster sport algérien">
+                        <div class="media-info">
+                            <h4 class="media-title">Audio : Ambiance des Stades</h4>
+                            <p class="media-description">
+                                Écoutez les chants des supporters et l'ambiance électrique des rencontres sportives.
+                            </p>
+                            <audio controls style="width:100%; margin-top:10px;">
+                                <source src="../media/audio/HymneAlgerie.mp3" type="audio/mpeg">
+                                Votre navigateur ne supporte pas l'audio.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section tableau (Consigne 11) -->
+            <section class="medals-section fade-in">
+                <div class="section-header">
+                    <h3>Palmarès Olympique Algérien</h3>
+                    <p>Performance aux Jeux Olympiques (1984-2020)</p>
+                </div>
+
+                <div class="table-container">
+                    <table class="medals-table">
+                        <thead>
+                            <tr>
+                                <th>Édition</th>
+                                <th>Lieu</th>
+                                <th>Or</th>
+                                <th>Argent</th>
+                                <th>Bronze</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1984</td>
+                                <td>Los Angeles</td>
+                                <td><span class="medal-count gold">0</span></td>
+                                <td><span class="medal-count silver">0</span></td>
+                                <td><span class="medal-count bronze">2</span></td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr>
+                                <td>1992</td>
+                                <td>Barcelone</td>
+                                <td><span class="medal-count gold">1</span></td>
+                                <td><span class="medal-count silver">0</span></td>
+                                <td><span class="medal-count bronze">1</span></td>
+                                <td><strong>2</strong></td>
+                            </tr>
+                            <tr>
+                                <td>1996</td>
+                                <td>Atlanta</td>
+                                <td><span class="medal-count gold">2</span></td>
+                                <td><span class="medal-count silver">0</span></td>
+                                <td><span class="medal-count bronze">1</span></td>
+                                <td><strong>3</strong></td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>Sydney</td>
+                                <td><span class="medal-count gold">1</span></td>
+                                <td><span class="medal-count silver">1</span></td>
+                                <td><span class="medal-count bronze">3</span></td>
+                                <td><strong>5</strong></td>
+                            </tr>
+                            <tr>
+                                <td>2012</td>
+                                <td>Londres</td>
+                                <td><span class="medal-count gold">1</span></td>
+                                <td><span class="medal-count silver">0</span></td>
+                                <td><span class="medal-count bronze">0</span></td>
+                                <td><strong>1</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Lien externe (Consigne 10) -->
+                <div style="text-align:right; margin-top:24px;">
+                    <p style="color:var(--dark-gray); font-size:14px;">
+                        Source : 
+                        <a href="https://fr.wikipedia.org/wiki/Alg%C3%A9rie_aux_Jeux_olympiques" 
+                           class="external-link" target="_blank">
+                           Wikipedia - Algérie aux JO
+                        </a>
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section ressources externes (Consigne 9 et 10) -->
+            <section class="resources-section fade-in">
+                <div class="section-header">
+                    <div>
+                        <h3 class="section-title">Ressources Officielles</h3>
+                        <p class="section-subtitle">Sites de référence et institutions sportives</p>
+                    </div>
+                </div>
+
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">Football</h4>
+                        </div>
+                        <p class="resource-description">
+                            Fédération Algérienne de Football
+                        </p>
+                        <a href="https://www.faf.dz" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span>Visiter le site</span>
+                            <span class="external-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">Comité Olympique</h4>
+                        </div>
+                        <p class="resource-description">
+                            Comité Olympique Algérien
+                        </p>
+                        <a href="https://www.coa.dz" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span>Visiter le site</span>
+                            <span class="external-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">Encyclopédie</h4>
+                        </div>
+                        <p class="resource-description">
+                            Wikipedia - Sport en Algérie
+                        </p>
+                        <a href="https://fr.wikipedia.org/wiki/Sport_en_Alg%C3%A9rie" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span>Consulter</span>
+                            <span class="external-arrow">→</span>
+                        </a>
+                    </div>
+
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <h4 class="resource-title">CIO</h4>
+                        </div>
+                        <p class="resource-description">
+                            Comité International Olympique
+                        </p>
+                        <a href="https://www.olympic.org/algeria" class="resource-link" target="_blank" rel="noopener noreferrer">
+                            <span>Page officielle</span>
+                            <span class="external-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Lien image (Consigne 9) -->
+                <div class="official-website">
+                    <div class="website-header">
+                        <h4 class="website-title">Site Officiel du CIO</h4>
+                        <p class="website-subtitle">Portail mondial du mouvement olympique</p>
+                    </div>
+                    <a href="https://www.olympic.org" class="website-link" target="_blank" rel="noopener noreferrer">
+                        <div class="website-card">
+                            <div class="website-image">
+                                <img src="../media/images/international.jpg" 
+                                     alt="Logo Comité International Olympique - Anneaux olympiques">
+                            </div>
+                            <div class="website-info">
+                                <div class="website-badge">Site Officiel</div>
+                                <h5 class="website-name">Olympic.org</h5>
+                                <p class="website-description">
+                                    Informations officielles, résultats et actualités olympiques
+                                </p>
+                                <div class="website-action">
+                                    <span>Visiter le site</span>
+                                    <span class="action-arrow">↗</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Affichage heure (Consigne 13) -->
+            <div class="time-display fade-in" id="timeDisplay">
+                <div class="time-container">
+                    <div class="time-content">
+                        <div class="time-label">Date et heure actuelles</div>
+                        <div class="time-value" id="currentTime">Chargement de l'heure...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-brand">
+                        <div class="footer-logo">SA</div>
+                        <div class="footer-brand-info">
+                            <h4 class="footer-title">Sport Algérien</h4>
+                            <p class="footer-subtitle">Projet académique L1</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Présentation de l'excellence et de la diversité du sport algérien 
+                        à travers ses champions et performances historiques.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Navigation</h4>
+                    <nav class="footer-nav-links">
+                        <a href="index.html" class="footer-link">
+                            <span>Accueil</span>
+                        </a>
+                        <a href="football.xhtml" class="footer-link">
+                            <span>Football</span>
+                        </a>
+                        <a href="autres-sports.xhtml" class="footer-link">
+                            <span>Autres Sports</span>
+                        </a>
+                        <a href="athletes.xhtml" class="footer-link">
+                            <span>Athlètes</span>
+                        </a>
+                        <a href="formulaire-contact.xhtml" class="footer-link">
+                            <span>Formulaire</span>
+                        </a>
+                        <a href="canvas.xhtml" class="footer-link">
+                            <span>Canvas</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact & Infos</h4>
+                    <div class="contact-info">
+                        <a href="formulaire-contact.xhtml" class="contact-link">
+                            <span>Formulaire de contact</span>
+                        </a>
+                        <a href="mailto:contact@sport-algerien.dz" class="contact-link">
+                            <span>contact@sport-algerien.dz</span>
+                        </a>
+                        <div class="contact-item">
+                            <span>Université de Bourgogne - L1 Info</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation entre pages (Consigne 8) -->
+            <div class="page-navigation">
+                <button class="nav-prev" onclick="goToPreviousPage()">
+                    <span class="nav-icon">←</span>
+                    <span class="nav-text">Page précédente</span>
+                </button>
+                
+                <a href="#" class="nav-top">
+                    <span class="nav-icon">↑</span>
+                    <span class="nav-text">Haut de page</span>
+                </a>
+                
+                <button class="nav-next" onclick="goToNextPage()">
+                    <span class="nav-text">Page suivante</span>
+                    <span class="nav-icon">→</span>
+                </button>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 2025 Chanez Zouina Dekimeche - Projet Web L1 - Tous droits réservés</p>
+                    <div class="validation-badges">
+                        <span class="badge">✓ XHTML 1.0 Strict</span>
+                        <span class="badge">✓ CSS Level 3</span>
+                        <span class="badge">✓ Responsive Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
