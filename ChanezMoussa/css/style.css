@@ -1,1147 +1,1061 @@
 /* 1. VARIABLES ET RESET */
+/* 
+   Déclaration des variables CSS globales (Custom Properties)
+   Permet une maintenance facile et une cohérence dans tout le site
+*/
 :root {
-    --primary: #006233;
-    --primary-dark: #004a28;
-    --secondary: #D21034;
-    --accent: #F8B229;
-    --light: #FFFFFF;
-    --light-gray: #F8F9FA;
-    --gray: #E9ECEF;
-    --dark-gray: #6C757D;
-    --dark: #212529;
-    --shadow: 0 4px 12px rgba(0,0,0,0.08);
-    --border-radius: 12px;
-    --transition: all 0.3s ease;
+    /* Palette de couleurs principale */
+    --primary: #006233;           /* Vert algérien principal */
+    --primary-dark: #004a28;      /* Version plus sombre du vert */
+    --secondary: #D21034;         /* Rouge algérien (accent) */
+    --accent: #F8B229;            /* Or/doré pour les accents */
+    --light: #FFFFFF;             /* Blanc pur */
+    --light-gray: #F8F9FA;        /* Gris très clair pour les arrière-plans */
+    --gray: #E9ECEF;              /* Gris moyen pour les bordures */
+    --dark-gray: #6C757D;         /* Gris foncé pour le texte secondaire */
+    --dark: #212529;              /* Noir/gris très foncé pour le texte principal */
+    
+    /* Variables d'effets et d'apparence */
+    --shadow: 0 4px 12px rgba(0,0,0,0.08); /* Ombre standard */
+    --border-radius: 12px;                  /* Rayon des coins arrondis */
+    --transition: all 0.3s ease;            /* Transition standard pour les animations */
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* 
+   Reset et styles de base pour le corps de la page
+   Définit la police, la couleur et l'arrière-plan par défaut
+*/
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--dark);
-    background: var(--light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
+    color: var(--dark);          /* Couleur du texte par défaut */
+    background: var(--light);    /* Arrière-plan blanc */
 }
 
 /* 2. LAYOUT */
+/* 
+   Conteneur principal pour centrer et limiter la largeur du contenu
+   Assure une présentation cohérente sur tous les écrans
+*/
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+    max-width: 1200px;   /* Largeur maximale sur les grands écrans */
+    margin: 0 auto;      /* Centre horizontalement */
+    padding: 0 24px;     /* Padding horizontal pour les petits écrans */
 }
 
-/* 3. HEADER ET NAVIGATION */
+/* 3. COMPOSANTS COMMUNS */
+/* Cartes - Composant réutilisable pour les sections en cartes */
+.card {
+    background: var(--light);            /* Fond blanc */
+    border-radius: var(--border-radius); /* Coins arrondis */
+    overflow: hidden;                    /* Cache le débordement du contenu */
+    box-shadow: var(--shadow);           /* Ombre légère */
+    transition: var(--transition);       /* Animation au survol */
+    border: 1px solid var(--gray);       /* Bordure subtile */
+}
+
+/* Effet au survol des cartes */
+.card:hover {
+    transform: translateY(-8px);         /* Légère élévation */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12); /* Ombre plus prononcée */
+    border-color: var(--primary);        /* Bordure colorée */
+}
+
+/* Boutons - Styles de base pour tous les boutons */
+.btn {
+    display: inline-flex;                /* Flex pour aligner icône et texte */
+    align-items: center;                 /* Centre verticalement */
+    justify-content: center;             /* Centre horizontalement */
+    gap: 10px;                           /* Espace entre icône et texte */
+    padding: 12px 24px;                  /* Padding intérieur */
+    border: 2px solid transparent;       /* Bordure transparente par défaut */
+    border-radius: 8px;                  /* Coins arrondis */
+    font-weight: 600;                    /* Texte en gras */
+    cursor: pointer;                     /* Curseur pointeur */
+    transition: var(--transition);       /* Animation fluide */
+    text-decoration: none;               /* Pas de soulignement */
+    text-align: center;                  /* Centrage du texte */
+    font-size: 15px;                     /* Taille de police */
+}
+
+/* Effet au survol pour tous les boutons */
+.btn:hover {
+    transform: translateY(-2px);         /* Légère élévation */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Ombre au survol */
+}
+
+/* Bouton principal (vert) */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)); /* Dégradé vert */
+    color: var(--light);                 /* Texte blanc */
+}
+
+/* Effet au survol du bouton principal */
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #003d1f); /* Dégradé plus foncé */
+    box-shadow: 0 6px 12px rgba(0, 98, 51, 0.3); /* Ombre verte */
+    border-color: var(--primary);        /* Bordure verte */
+}
+
+/* Bouton secondaire (gris) */
+.btn-secondary {
+    background: linear-gradient(135deg, var(--dark-gray), #495057); /* Dégradé gris */
+    color: var(--light);                 /* Texte blanc */
+}
+
+/* Effet au survol du bouton secondaire */
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #495057, #343a40); /* Dégradé plus foncé */
+    box-shadow: 0 6px 12px rgba(108, 117, 125, 0.3); /* Ombre grise */
+    border-color: var(--dark-gray);      /* Bordure grise */
+}
+
+/* Bouton de petite taille */
+.btn-small {
+    padding: 12px 20px;                  /* Padding réduit */
+    font-size: 15px;                     /* Taille de police normale */
+}
+
+/* Titres de section - Style pour les en-têtes de section */
+.section-header {
+    text-align: center;                  /* Centrage du texte */
+    margin-bottom: 32px;                 /* Marge en bas */
+}
+
+.section-title {
+    font-size: 28px;                     /* Taille de police importante */
+    color: var(--primary-dark);          /* Couleur verte foncée */
+    margin-bottom: 8px;                  /* Petite marge en bas */
+}
+
+.section-subtitle {
+    color: var(--dark-gray);             /* Gris pour le sous-titre */
+    margin-bottom: 32px;                 /* Marge en bas */
+}
+
+/* 4. HEADER ET NAVIGATION */
+/* En-tête du site fixe en haut de page */
 .site-header {
-    position: sticky;
-    top: 0;
-    background: var(--light);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    z-index: 1000;
-    padding: 16px 0;
+    position: sticky;                    /* Reste visible au défilement */
+    top: 0;                              /* Positionné en haut */
+    background: var(--light);            /* Fond blanc */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Ombre légère */
+    z-index: 1000;                       /* Au-dessus des autres éléments */
+    padding: 16px 0;                     /* Padding vertical */
 }
 
+/* Conteneur pour l'en-tête */
 .header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;                       /* Flexbox pour l'alignement */
+    justify-content: space-between;      /* Espace entre logo et navigation */
+    align-items: center;                 /* Centre verticalement */
 }
 
+/* Logo et nom de la marque */
 .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
+    display: flex;                       /* Flex pour aligner logo et texte */
+    align-items: center;                 /* Centre verticalement */
+    gap: 12px;                           /* Espace entre logo et texte */
+    text-decoration: none;               /* Pas de soulignement */
 }
 
+/* Cercle du logo */
 .brand-logo {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    border-radius: 10px;
-    color: var(--light);
-    font-weight: bold;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 48px;                         /* Taille fixe */
+    height: 48px;                        /* Carré parfait */
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)); /* Dégradé vert */
+    border-radius: 10px;                 /* Coins arrondis */
+    color: var(--light);                 /* Texte blanc */
+    font-weight: bold;                   /* Texte en gras */
+    font-size: 20px;                     /* Taille de police */
+    display: flex;                       /* Flex pour centrer le texte */
+    align-items: center;                 /* Centre verticalement */
+    justify-content: center;             /* Centre horizontalement */
 }
 
+/* Nom de la marque */
 .brand-name {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--dark);
+    font-size: 24px;                     /* Taille de police importante */
+    font-weight: 700;                    /* Texte très gras */
+    color: var(--dark);                  /* Couleur foncée */
 }
 
+/* Partie "Algérien" dans le nom de la marque */
 .brand-name span {
-    color: var(--primary);
+    color: var(--primary);               /* Vert pour mettre en valeur */
 }
 
 /* Navigation principale */
 .primary-nav {
-    display: flex;
-    gap: 8px;
-    background: var(--light-gray);
-    padding: 8px;
-    border-radius: 12px;
+    display: flex;                       /* Flex pour aligner les boutons */
+    gap: 8px;                            /* Espace entre les boutons */
+    background: var(--light-gray);       /* Fond gris très clair */
+    padding: 8px;                        /* Padding intérieur */
+    border-radius: 12px;                 /* Coins arrondis */
 }
 
+/* Boutons de navigation */
 .nav-btn {
-    padding: 12px 20px;
-    background: var(--light);
-    border: 2px solid transparent;
-    border-radius: 8px;
-    color: var(--dark);
-    font-weight: 500;
-    transition: var(--transition);
-    font-size: 15px;
+    padding: 12px 20px;                  /* Padding */
+    background: var(--light);            /* Fond blanc */
+    border: 2px solid transparent;       /* Bordure invisible par défaut */
+    border-radius: 8px;                  /* Coins arrondis */
+    color: var(--dark);                  /* Texte foncé */
+    font-weight: 500;                    /* Poids moyen */
+    transition: var(--transition);       /* Animation fluide */
+    font-size: 15px;                     /* Taille de police */
 }
 
+/* Effet au survol des boutons de navigation */
 .nav-btn:hover {
-    background: var(--primary);
-    color: var(--light);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,98,51,0.2);
+    background: var(--primary);          /* Fond vert */
+    color: var(--light);                 /* Texte blanc */
+    transform: translateY(-2px);         /* Légère élévation */
+    box-shadow: 0 4px 8px rgba(0,98,51,0.2); /* Ombre verte */
 }
 
+/* Bouton de navigation actif (page courante) */
 .nav-btn.active {
-    background: var(--primary);
-    color: var(--light);
-    font-weight: 600;
+    background: var(--primary);          /* Fond vert */
+    color: var(--light);                 /* Texte blanc */
+    font-weight: 600;                    /* Texte plus gras */
 }
 
-/* 4. HERO CARROUSEL */
+/* 5. HERO CARROUSEL */
+/* Section héro avec carrousel d'images */
 .hero {
-    margin: 48px 0 64px;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
+    margin: 48px 0 64px;                 /* Marges verticales */
+    border-radius: var(--border-radius); /* Coins arrondis */
+    overflow: hidden;                    /* Cache le débordement */
+    box-shadow: var(--shadow);           /* Ombre */
 }
 
+/* Conteneur du carrousel */
 .carousel-container {
-    position: relative;
-    height: 500px;
+    position: relative;                  /* Position relative pour le positionnement absolu des enfants */
+    height: 500px;                       /* Hauteur fixe */
 }
 
+/* Slide individuelle du carrousel */
 .carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.8s ease;
+    position: absolute;                  /* Position absolue pour superposition */
+    top: 0;                              /* En haut */
+    left: 0;                             /* À gauche */
+    width: 100%;                         /* Pleine largeur */
+    height: 100%;                        /* Pleine hauteur */
+    opacity: 0;                          /* Invisible par défaut */
+    transition: opacity 0.8s ease;       /* Transition douce pour l'opacité */
 }
 
+/* Slide active (visible) */
 .carousel-slide.active {
-    opacity: 1;
+    opacity: 1;                          /* Complètement visible */
 }
 
+/* Image de fond du carrousel */
 .carousel-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    width: 100%;                         /* Pleine largeur */
+    height: 100%;                        /* Pleine hauteur */
+    object-fit: cover;                   /* Couvre l'espace sans déformation */
+    object-position: center;             /* Centre l'image */
 }
 
+/* Overlay semi-transparent sur l'image */
 .carousel-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+    position: absolute;                  /* Superposé à l'image */
+    top: 0;                              /* En haut */
+    left: 0;                             /* À gauche */
+    width: 100%;                         /* Pleine largeur */
+    height: 100%;                        /* Pleine hauteur */
+    background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.4)); /* Dégradé noir transparent */
 }
 
+/* Contenu texte superposé à l'image */
 .slide-content {
-    position: absolute;
-    bottom: 80px;
-    left: 80px;
-    color: var(--light);
-    max-width: 600px;
+    position: absolute;                  /* Position absolue */
+    bottom: 80px;                        /* Positionné en bas */
+    left: 80px;                          /* Décalé de la gauche */
+    color: var(--light);                 /* Texte blanc */
+    max-width: 600px;                    /* Largeur maximale */
 }
 
+/* Badge/catégorie de la slide */
 .slide-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    margin-bottom: 16px;
-    backdrop-filter: blur(10px);
+    display: inline-block;               /* Bloc en ligne */
+    background: rgba(255,255,255,0.2);   /* Fond blanc semi-transparent */
+    padding: 6px 16px;                   /* Padding */
+    border-radius: 20px;                 /* Coins très arrondis (capsule) */
+    font-size: 14px;                     /* Petite police */
+    margin-bottom: 16px;                 /* Marge en bas */
+    backdrop-filter: blur(10px);         /* Effet de flou derrière */
 }
 
+/* Titre principal de la slide */
 .slide-title {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.2;
+    font-size: 42px;                     /* Très grande police */
+    font-weight: 700;                    /* Texte très gras */
+    margin-bottom: 16px;                 /* Marge en bas */
+    line-height: 1.2;                    /* Hauteur de ligne */
 }
 
+/* Description de la slide */
 .slide-description {
-    font-size: 18px;
-    opacity: 0.9;
-    max-width: 500px;
+    font-size: 18px;                     /* Police moyenne */
+    opacity: 0.9;                        /* Légerment transparent */
+    max-width: 500px;                    /* Largeur maximale */
 }
 
+/* Contrôles du carrousel (points indicateurs) */
 .carousel-controls {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 10;
+    position: absolute;                  /* Position absolue */
+    bottom: 30px;                        /* En bas */
+    left: 50%;                           /* Centre horizontal */
+    transform: translateX(-50%);         /* Correction du centrage */
+    display: flex;                       /* Flex pour aligner les points */
+    gap: 12px;                           /* Espace entre les points */
+    z-index: 10;                         /* Au-dessus de l'image */
 }
 
+/* Point indicateur individuel */
 .control-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    border: none;
-    cursor: pointer;
-    transition: var(--transition);
+    width: 12px;                         /* Largeur */
+    height: 12px;                        /* Hauteur (carré) */
+    border-radius: 50%;                  /* Cercle parfait */
+    background: rgba(255,255,255,0.5);   /* Blanc semi-transparent */
+    border: none;                        /* Pas de bordure */
+    cursor: pointer;                     /* Curseur pointeur */
+    transition: var(--transition);       /* Animation */
 }
 
+/* Point indicateur actif */
 .control-dot.active {
-    background: var(--light);
-    transform: scale(1.2);
+    background: var(--light);            /* Blanc pur */
+    transform: scale(1.2);               /* Légèrement agrandi */
 }
 
-/* 5. CONTENU PRINCIPAL */
+/* 6. CONTENU PRINCIPAL */
+/* Section principale du contenu */
 .main-content {
-    padding-bottom: 80px;
+    padding-bottom: 80px;                /* Padding en bas */
 }
 
-/* Section présentation */
-.presentation {
-    margin-bottom: 64px;
-}
-
+/* Introduction de section */
 .section-intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 48px;
+    text-align: center;                  /* Texte centré */
+    max-width: 800px;                    /* Largeur maximale */
+    margin: 0 auto 48px;                 /* Centrage horizontal avec marge en bas */
 }
 
+/* Titre de l'introduction */
 .section-intro h2 {
-    font-size: 36px;
-    color: var(--primary-dark);
-    margin-bottom: 20px;
+    font-size: 36px;                     /* Grande police */
+    color: var(--primary-dark);          /* Vert foncé */
+    margin-bottom: 20px;                 /* Marge en bas */
 }
 
+/* Paragraphe de l'introduction */
 .section-intro p {
-    font-size: 18px;
-    color: var(--dark-gray);
+    font-size: 18px;                     /* Police moyenne */
+    color: var(--dark-gray);             /* Gris foncé */
 }
 
-/* Cartes de contenu */
+/* Grilles de contenu */
+.content-cards,
+.media-grid,
+.resources-grid,
+.contact-methods,
+.form-grid {
+    display: grid;                       /* Layout en grille CSS */
+    gap: 24px;                           /* Espace entre les éléments */
+    margin-bottom: 40px;                 /* Marge en bas */
+}
+
+/* Grille des cartes de contenu */
 .content-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 64px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Colonnes adaptatives */
 }
 
-.content-cards > * {
-    flex: 1 1 350px; /* largeur minimale 350px, s'étend si possible */
-}
-
-.content-card {
-    background: var(--light);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    border: 1px solid var(--gray);
-}
-
-.content-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    border-color: var(--primary);
-}
-
-.card-header {
-    padding: 24px 24px 16px;
-}
-
-/* Boutons */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background: var(--gray);
-    color: var(--dark);
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    text-decoration: none;
-    text-align: center;
-}
-
-.btn-secondary {
-    background: var(--primary);
-    color: var(--light);
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* 6. SECTION MEDIAS */
-.media-section {
-    margin: 64px 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 32px;
-}
-
-.section-header h3 {
-    font-size: 28px;
-    color: var(--primary-dark);
-    margin-bottom: 8px;
-}
-
+/* Grille des médias */
 .media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonnes adaptatives */
+    gap: 30px;                           /* Espacement */
 }
 
-.media-item {
-    background: var(--light);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
+/* Grilles pour ressources et méthodes de contact */
+.resources-grid,
+.contact-methods {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonnes plus petites */
 }
 
+/* Grille du formulaire */
+.form-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonnes adaptatives */
+    margin-top: 32px;                    /* Marge en haut */
+}
+
+/* Styles communs pour les cartes */
+.content-card,
+.media-item,
+.resource-card,
+.contact-method {
+    background: var(--light);            /* Fond blanc */
+    border-radius: var(--border-radius); /* Coins arrondis */
+    overflow: hidden;                    /* Cache le débordement */
+    box-shadow: var(--shadow);           /* Ombre */
+    transition: var(--transition);       /* Animation */
+}
+
+/* Effets au survol des cartes */
+.content-card:hover,
+.contact-method:hover {
+    transform: translateY(-8px);         /* Élévation importante */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12); /* Ombre prononcée */
+}
+
+/* Effet spécifique pour les méthodes de contact */
+.contact-method:hover {
+    transform: translateY(-5px);         /* Élévation modérée */
+}
+
+/* En-tête des cartes */
+.card-header {
+    padding: 24px 24px 16px;             /* Padding interne */
+}
+
+/* Aperçu des médias (images) */
 .media-preview {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%;                         /* Pleine largeur */
+    height: 200px;                       /* Hauteur fixe */
+    object-fit: cover;                   /* Couvre l'espace sans déformation */
 }
 
-video, audio {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
+/* Cartes de ressources et méthodes de contact */
+.resource-card,
+.contact-method {
+    padding: 24px;                       /* Padding interne */
 }
 
-/* 7. SECTION TABLEAU */
-.medals-section {
-    background: var(--light);
-    border-radius: var(--border-radius);
-    padding: 40px;
-    margin: 64px 0;
-    box-shadow: var(--shadow);
+/* Style spécifique pour les méthodes de contact */
+.contact-method {
+    text-align: center;                  /* Texte centré */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Ombre très légère */
 }
 
-.table-container {
-    overflow-x: auto;
-    margin-top: 24px;
+/* 7. SECTIONS SPÉCIALES */
+/* Sections avec arrière-plan et ombre */
+.medals-section,
+.resources-section,
+.formulaire-section,
+.contact-info-section {
+    background: var(--light);            /* Fond blanc */
+    border-radius: var(--border-radius); /* Coins arrondis */
+    padding: 40px;                       /* Padding interne */
+    margin: 40px 0;                      /* Marges verticales */
+    box-shadow: var(--shadow);           /* Ombre */
 }
 
-.medals-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 600px;
-}
-
-.medals-table thead {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-}
-
-.medals-table th {
-    color: var(--light);
-    padding: 18px 20px;
-    text-align: left;
-    font-weight: 600;
-}
-
-.medals-table td {
-    padding: 18px 20px;
-    border-bottom: 1px solid var(--gray);
-}
-
-.medals-table tbody tr:hover {
-    background: rgba(0,98,51,0.03);
-}
-
-.medal-count {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.medal-count.gold {
-    background: #FFD700;
-    color: #856404;
-}
-
-.medal-count.silver {
-    background: #C0C0C0;
-    color: #495057;
-}
-
-.medal-count.bronze {
-    background: #CD7F32;
-    color: white;
-}
-
-/* 8. SECTION RESSOURCES */
+/* Section ressources avec fond différent */
 .resources-section {
-    background: var(--light-gray);
-    border-radius: var(--border-radius);
-    padding: 40px;
-    margin: 48px 0;
+    background: var(--light-gray);       /* Fond gris très clair */
 }
 
-.section-title {
-    font-size: 28px;
-    color: var(--primary-dark);
-    margin-bottom: 4px;
+/* Conteneur pour les tableaux avec défilement horizontal */
+.table-container {
+    overflow-x: auto;                    /* Défilement horizontal si nécessaire */
+    margin-top: 24px;                    /* Marge en haut */
 }
 
-.section-subtitle {
-    color: var(--dark-gray);
-    margin-bottom: 32px;
+/* Tableau des médailles */
+.medals-table {
+    width: 100%;                         /* Pleine largeur */
+    border-collapse: collapse;           /* Fusion des bordures */
+    min-width: 600px;                    /* Largeur minimale */
 }
 
-.resources-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
-    margin-bottom: 40px;
+/* En-tête du tableau */
+.medals-table thead {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)); /* Dégradé vert */
 }
 
-.resource-card {
-    background: var(--light);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    transition: var(--transition);
+/* Cellules d'en-tête */
+.medals-table th {
+    color: var(--light);                 /* Texte blanc */
+    padding: 18px 20px;                  /* Padding */
+    text-align: left;                    /* Alignement à gauche */
+    font-weight: 600;                    /* Texte en gras */
 }
 
-.resource-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 500;
+/* Cellules du corps du tableau */
+.medals-table td {
+    padding: 18px 20px;                  /* Padding */
+    border-bottom: 1px solid var(--gray); /* Bordure bas */
 }
 
-/* Site officiel */
-.official-website {
-    background: var(--light);
-    border-radius: 16px;
-    padding: 32px;
-    margin-top: 32px;
-    box-shadow: var(--shadow);
+/* Effet au survol des lignes */
+.medals-table tbody tr:hover {
+    background: rgba(0,98,51,0.03);      /* Fond vert très clair */
 }
 
-.website-card {
-    display: flex;
-    gap: 32px;
-    background: var(--light-gray);
-    border-radius: 12px;
-    padding: 24px;
-    transition: var(--transition);
+/* 8. COMPOSANTS SPÉCIFIQUES */
+/* Compteurs de médailles et indicateurs de tendance */
+.medal-count,
+.trend {
+    display: inline-block;               /* Bloc en ligne */
+    padding: 6px 12px;                   /* Padding */
+    border-radius: 20px;                 /* Forme capsule */
+    font-weight: 600;                    /* Texte en gras */
+    font-size: 14px;                     /* Petite police */
 }
 
-
-.website-image img {
-    width: 200px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
+/* Médaille d'or */
+.medal-count.gold {
+    background: #FFD700;                 /* Or */
+    color: #856404;                      /* Marron foncé pour contraste */
 }
 
-/* 9. AFFICHAGE HEURE */
-.time-display {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-    border-radius: var(--border-radius);
-    padding: 24px;
-    margin: 32px 0;
-    color: var(--light);
-    text-align: center;
+/* Médaille d'argent */
+.medal-count.silver {
+    background: #C0C0C0;                 /* Argent */
+    color: #495057;                      /* Gris foncé */
 }
 
-.time-label {
-    font-size: 14px;
-    opacity: 0.9;
-    margin-bottom: 8px;
+/* Médaille de bronze */
+.medal-count.bronze {
+    background: #CD7F32;                 /* Bronze */
+    color: white;                        /* Texte blanc */
 }
 
-.time-value {
-    font-size: 24px;
-    font-weight: 700;
-    font-family: monospace;
+/* Tendance à la hausse */
+.trend.up {
+    background: #d4edda;                 /* Vert pâle */
+    color: #155724;                      /* Vert foncé */
 }
 
-/* 10. FOOTER */
+/* Tendance à la baisse */
+.trend.down {
+    background: #f8d7da;                 /* Rouge pâle */
+    color: #721c24;                      /* Rouge foncé */
+}
+
+/* Tendance stable */
+.trend.stable {
+    background: #fff3cd;                 /* Jaune pâle */
+    color: #856404;                      /* Marron */
+}
+
+/* 9. FORMULAIRE */
+/* Groupe de champs de formulaire */
+.form-group {
+    display: flex;                       /* Flexbox */
+    flex-direction: column;              /* Colonne (étiquette au-dessus du champ) */
+}
+
+/* Groupe qui prend toute la largeur */
+.form-group.full-width {
+    grid-column: 1 / -1;                 /* S'étend sur toutes les colonnes */
+}
+
+/* Étiquettes des champs */
+.form-group label {
+    font-weight: 600;                    /* Texte en gras */
+    margin-bottom: 8px;                  /* Marge en bas */
+    color: var(--primary-dark);          /* Vert foncé */
+    font-size: 15px;                     /* Taille de police */
+}
+
+/* Astérisque rouge pour les champs obligatoires */
+.form-group label::after {
+    content: ' *';                       /* Ajoute un astérisque */
+    color: var(--secondary);             /* Rouge */
+    opacity: 0.7;                        /* Légèrement transparent */
+}
+
+/* Supprime l'astérisque pour les champs non obligatoires */
+.form-group:has(input:not([required])) label::after,
+.form-group:has(select:not([required])) label::after,
+.form-group:has(textarea:not([required])) label::after {
+    content: '';                         /* Pas d'astérisque */
+}
+
+/* Champs de formulaire (input, select, textarea) */
+.form-input,
+.form-select,
+.form-textarea {
+    padding: 14px 16px;                  /* Padding */
+    border: 2px solid var(--gray);       /* Bordure grise */
+    border-radius: 8px;                  /* Coins arrondis */
+    font-size: 15px;                     /* Taille de police */
+    font-family: inherit;                /* Hérite de la police du parent */
+    transition: var(--transition);       /* Animation */
+    background: var(--light);            /* Fond blanc */
+}
+
+/* État focus des champs */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;                       /* Supprime l'outline par défaut */
+    border-color: var(--primary);        /* Bordure verte */
+    box-shadow: 0 0 0 3px rgba(0, 98, 51, 0.1); /* Ombre verte subtile */
+}
+
+/* Placeholder des champs */
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--dark-gray);             /* Gris foncé */
+    opacity: 0.6;                        /* Légèrement transparent */
+}
+
+/* Conteneur du sélecteur de couleur */
+.color-picker {
+    display: flex;                       /* Flexbox */
+    align-items: center;                 /* Centre verticalement */
+    gap: 12px;                           /* Espace entre éléments */
+}
+
+/* Input de type couleur */
+.form-color {
+    width: 50px;                         /* Largeur */
+    height: 50px;                        /* Hauteur (carré) */
+    border: 2px solid var(--gray);       /* Bordure grise */
+    border-radius: 8px;                  /* Coins arrondis */
+    cursor: pointer;                     /* Curseur pointeur */
+    padding: 3px;                        /* Padding interne */
+    background: var(--light);            /* Fond blanc */
+}
+
+/* Effet au survol du sélecteur de couleur */
+.form-color:hover {
+    border-color: var(--primary);        /* Bordure verte */
+}
+
+/* Texte descriptif de la couleur */
+.color-value {
+    font-size: 14px;                     /* Petite police */
+    color: var(--dark-gray);             /* Gris foncé */
+}
+
+/* Zone de texte (textarea) */
+.form-textarea {
+    resize: vertical;                    /* Redimensionnement vertical uniquement */
+    min-height: 120px;                   /* Hauteur minimale */
+    max-height: 300px;                   /* Hauteur maximale */
+}
+
+/* Groupe de case à cocher */
+.checkbox-group {
+    display: flex;                       /* Flexbox */
+    align-items: center;                 /* Centre verticalement */
+    gap: 12px;                           /* Espace entre case et texte */
+    padding: 12px;                       /* Padding */
+    background: var(--light-gray);       /* Fond gris très clair */
+    border-radius: 8px;                  /* Coins arrondis */
+    border: 1px solid var(--gray);       /* Bordure grise */
+}
+
+/* Case à cocher */
+.form-checkbox {
+    width: 20px;                         /* Largeur */
+    height: 20px;                        /* Hauteur (carré) */
+    cursor: pointer;                     /* Curseur pointeur */
+    accent-color: var(--primary);        /* Couleur personnalisée */
+}
+
+/* Étiquette de la case à cocher */
+.checkbox-label {
+    margin: 0;                           /* Pas de marge */
+    font-weight: 500;                    /* Poids moyen */
+    cursor: pointer;                     /* Curseur pointeur */
+    color: var(--dark);                  /* Texte foncé */
+}
+
+/* 10. CANVAS */
+/* Section Canvas */
+.canvas-section {
+    background: var(--light-gray);       /* Fond gris clair */
+    border-radius: 10px;                 /* Coins arrondis */
+    padding: 20px;                       /* Padding */
+    margin: 20px 0;                      /* Marges verticales */
+    border: 1px solid var(--gray);       /* Bordure grise */
+}
+
+/* Conteneur du canvas */
+.canvas-wrapper {
+    text-align: center;                  /* Centrage horizontal */
+    margin: 20px 0;                      /* Marges verticales */
+}
+
+/* Canvas principal */
+#logoCanvas {
+    border: 3px solid var(--primary);    /* Bordure verte */
+    background: white;                   /* Fond blanc */
+    display: block;                      /* Élément bloc */
+    margin: 0 auto;                      /* Centrage horizontal */
+}
+
+/* Contrôles Canvas */
+.controls {
+    margin: 20px 0;                      /* Marges verticales */
+    text-align: center;                  /* Centrage horizontal */
+}
+
+/* Boutons Canvas */
+.btn-canvas {
+    padding: 10px 20px;                  /* Padding */
+    margin: 5px;                         /* Marge externe */
+    background: var(--primary);          /* Fond vert */
+    color: var(--light);                 /* Texte blanc */
+    border: none;                        /* Pas de bordure */
+    border-radius: 5px;                  /* Coins arrondis */
+    cursor: pointer;                     /* Curseur pointeur */
+    font-weight: bold;                   /* Texte en gras */
+}
+
+/* Effet au survol des boutons Canvas */
+.btn-canvas:hover {
+    background: var(--primary-dark);     /* Vert plus foncé */
+}
+
+/* Section d'explication du code */
+.explanation {
+    background: var(--light);            /* Fond blanc */
+    padding: 20px;                       /* Padding */
+    border-radius: 8px;                  /* Coins arrondis */
+    margin: 20px 0;                      /* Marges verticales */
+    border-left: 4px solid var(--primary); /* Bordure gauche verte */
+}
+
+/* Bloc de code */
+.code-block {
+    background: #f1f3f5;                 /* Fond gris clair */
+    padding: 15px;                       /* Padding */
+    border-radius: 5px;                  /* Coins arrondis */
+    font-family: monospace;              /* Police à chasse fixe */
+    margin: 10px 0;                      /* Marges verticales */
+    overflow-x: auto;                    /* Défilement horizontal si nécessaire */
+    border-left: 3px solid var(--primary); /* Bordure gauche verte */
+}
+
+/* Carré de couleur */
+.color-box {
+    display: inline-block;               /* Bloc en ligne */
+    width: 20px;                         /* Largeur */
+    height: 20px;                        /* Hauteur (carré) */
+    margin: 0 5px;                       /* Marges horizontales */
+    border: 1px solid #ccc;              /* Bordure grise */
+    vertical-align: middle;              /* Alignement vertical au milieu */
+}
+
+/* Étape d'explication */
+.step {
+    margin: 25px 0;                      /* Marges verticales */
+    padding-bottom: 25px;                /* Padding en bas */
+    border-bottom: 1px dashed var(--gray); /* Bordure bas en pointillés */
+}
+
+/* Dernière étape (pas de bordure) */
+.step:last-child {
+    border-bottom: none;                 /* Pas de bordure */
+}
+
+/* Numéro d'étape */
+.step-number {
+    background: var(--primary);          /* Fond vert */
+    color: var(--light);                 /* Texte blanc */
+    width: 30px;                         /* Largeur */
+    height: 30px;                        /* Hauteur (carré) */
+    border-radius: 50%;                  /* Cercle parfait */
+    display: inline-block;               /* Bloc en ligne */
+    text-align: center;                  /* Texte centré */
+    line-height: 30px;                   /* Hauteur de ligne = hauteur (centre vertical) */
+    margin-right: 10px;                  /* Marge à droite */
+    font-weight: bold;                   /* Texte en gras */
+}
+
+/* Contenu indenté */
+.indent {
+    margin-left: 40px;                   /* Marge à gauche pour l'indentation */
+}
+
+/* Ligne de code */
+.code-line {
+    display: block;                      /* Élément bloc */
+    margin: 2px 0;                       /* Petites marges verticales */
+}
+
+/* 11. FOOTER */
+/* Pied de page */
 .site-footer {
-    background: linear-gradient(135deg, #1a2e28, #2d453a);
-    color: var(--light);
-    padding: 64px 0 32px;
-    margin-top: 80px;
+    background: linear-gradient(135deg, #1a2e28, #2d453a); /* Dégradé de verts foncés */
+    color: var(--light);                 /* Texte blanc */
+    padding: 64px 0 32px;                /* Padding (plus en haut) */
+    margin-top: 80px;                    /* Marge en haut */
 }
 
+/* Grille du footer */
 .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 48px;
-    margin-bottom: 48px;
+    display: grid;                       /* Layout en grille */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonnes adaptatives */
+    gap: 48px;                           /* Grand espace entre colonnes */
+    margin-bottom: 48px;                 /* Marge en bas */
 }
 
+/* Titre du footer */
 .footer-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 4px;
+    font-size: 20px;                     /* Police moyenne */
+    font-weight: 700;                    /* Texte très gras */
+    margin-bottom: 4px;                  /* Petite marge en bas */
 }
 
+/* Sous-titre du footer */
 .footer-subtitle {
-    color: rgba(255,255,255,0.7);
-    font-size: 14px;
-    margin-bottom: 20px;
+    color: rgba(255,255,255,0.7);        /* Blanc semi-transparent */
+    font-size: 14px;                     /* Petite police */
+    margin-bottom: 20px;                 /* Marge en bas */
 }
 
+/* Titre des sections du footer */
 .footer-heading {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 24px;
-    position: relative;
-    padding-bottom: 12px;
+    font-size: 18px;                     /* Police */
+    font-weight: 600;                    /* Texte en gras */
+    margin-bottom: 24px;                 /* Marge en bas */
+    position: relative;                  /* Pour les pseudo-éléments */
+    padding-bottom: 12px;                /* Padding en bas */
 }
 
+/* Liens de navigation du footer */
 .footer-nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: flex;                       /* Flexbox */
+    flex-direction: column;              /* Colonne */
+    gap: 12px;                           /* Espace entre liens */
 }
 
-.footer-link {
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    transition: var(--transition);
-    padding: 8px 0;
+/* Liens du footer et des ressources */
+.footer-link,
+.resource-link {
+    color: rgba(255,255,255,0.8);        /* Blanc semi-transparent */
+    text-decoration: none;               /* Pas de soulignement */
+    transition: var(--transition);       /* Animation */
+    padding: 8px 0;                      /* Padding vertical */
 }
 
+/* Effet au survol des liens du footer */
 .footer-link:hover {
-    color: var(--light);
-    padding-left: 8px;
+    color: var(--light);                 /* Blanc pur */
+    padding-left: 8px;                   /* Décalage à gauche */
 }
 
-/* Navigation entre pages */
-.page-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 0;
-    margin: 32px 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.nav-prev, .nav-next, .nav-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 24px;
-    background: rgba(255,255,255,0.1);
-    color: var(--light);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.nav-prev:hover, .nav-next:hover, .nav-top:hover {
-    background: rgba(255,255,255,0.2);
-    transform: translateY(-2px);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 32px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.6);
-}
-
-/* 11. LIENS EXTERNES */
-.external-link {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 500;
+/* Style spécifique pour les liens de ressources */
+.resource-link {
+    color: var(--primary);               /* Vert */
+    display: inline-flex;                /* Flex en ligne */
+    align-items: center;                 /* Centre verticalement */
+    gap: 8px;                            /* Espace entre texte et icône */
+    font-weight: 500;                    /* Poids moyen */
 }
 
 /* 12. ANIMATIONS */
+/* Classe pour l'animation d'apparition progressive */
 .fade-in {
-    animation: fadeIn 0.6s ease forwards;
+    animation: fadeIn 0.6s ease forwards; /* Animation nommée "fadeIn" */
 }
 
+/* Définition de l'animation fadeIn */
 @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 0;                      /* Complètement transparent */
+        transform: translateY(20px);     /* Décalé vers le bas */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1;                      /* Complètement opaque */
+        transform: translateY(0);        /* Position normale */
     }
 }
 
 /* 13. RESPONSIVE */
+/* Tablettes et petits ordinateurs */
 @media (max-width: 992px) {
     .slide-content {
-        left: 40px;
-        bottom: 60px;
+        left: 40px;                      /* Moins de décalage */
+        bottom: 60px;                    /* Moins de décalage */
     }
     
     .slide-title {
-        font-size: 32px;
+        font-size: 32px;                 /* Taille réduite */
     }
     
     .website-card {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column;          /* Colonne au lieu de ligne */
+        text-align: center;              /* Texte centré */
     }
     
     .website-image img {
-        width: 100%;
-        height: auto;
+        width: 100%;                     /* Pleine largeur */
+        height: auto;                    /* Hauteur automatique */
     }
 }
 
+/* Tablettes et grands mobiles */
 @media (max-width: 768px) {
     .header-wrapper {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: column;          /* Logo et navigation en colonne */
+        gap: 20px;                       /* Espace entre éléments */
     }
     
     .primary-nav {
-        justify-content: center;
+        justify-content: center;         /* Centre les boutons */
     }
     
     .carousel-container {
-        height: 400px;
+        height: 400px;                   /* Hauteur réduite */
     }
     
     .slide-content {
-        left: 24px;
-        right: 24px;
-        bottom: 40px;
+        left: 24px;                      /* Moins de décalage */
+        right: 24px;                     /* Décalage à droite aussi */
+        bottom: 40px;                    /* Moins de décalage */
     }
     
     .slide-title {
-        font-size: 28px;
+        font-size: 28px;                 /* Taille encore réduite */
     }
     
-    .content-cards {
-        grid-template-columns: 1fr;
+    .content-cards,
+    .media-grid,
+    .form-grid {
+        grid-template-columns: 1fr;      /* Une seule colonne */
     }
     
-    .media-grid {
-        grid-template-columns: 1fr;
+    .form-buttons {
+        flex-direction: column;          /* Boutons en colonne */
+        gap: 16px;                       /* Espace entre boutons */
     }
     
-    .page-navigation {
-        flex-direction: column;
-        gap: 16px;
-    }
-    
-    .nav-prev, .nav-next, .nav-top {
-        width: 100%;
-        justify-content: center;
+    .form-buttons .btn {
+        width: 100%;                     /* Pleine largeur */
+        min-width: auto;                 /* Largeur minimale automatique */
     }
 }
 
+/* Mobiles */
 @media (max-width: 480px) {
     .container {
-        padding: 0 16px;
+        padding: 0 16px;                 /* Padding réduit */
     }
     
     .carousel-container {
-        height: 350px;
+        height: 350px;                   /* Hauteur encore réduite */
     }
     
     .slide-title {
-        font-size: 24px;
+        font-size: 24px;                 /* Taille adaptée aux mobiles */
     }
     
     .slide-description {
-        font-size: 16px;
+        font-size: 16px;                 /* Texte plus petit */
     }
     
     .medals-section,
-    .resources-section {
-        padding: 24px 16px;
+    .resources-section,
+    .formulaire-section,
+    .contact-info-section {
+        padding: 24px 16px;              /* Padding réduit */
     }
     
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;      /* Une seule colonne */
     }
 }
 
 /* ============================================
-   STYLES SPÉCIFIQUES AU FORMULAIRE
+   STYLES SPÉCIAUX POUR LES BOUTONS DU FORMULAIRE
    ============================================ */
 
-/* Section formulaire */
-.formulaire-section {
-    background: var(--light);
-    border-radius: var(--border-radius);
-    padding: 40px;
-    margin: 40px 0;
-    box-shadow: var(--shadow);
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    margin-top: 32px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group.full-width {
-    grid-column: 1 / -1;
-}
-
-/* Labels */
-.form-group label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--primary-dark);
-    font-size: 15px;
-}
-
-.form-group label::after {
-    content: ' *';
-    color: var(--secondary);
-    opacity: 0.7;
-}
-
-.form-group:has(input:not([required])) label::after,
-.form-group:has(select:not([required])) label::after,
-.form-group:has(textarea:not([required])) label::after {
-    content: '';
-}
-
-/* Inputs */
-.form-input,
-.form-select,
-.form-textarea {
-    padding: 14px 16px;
-    border: 2px solid var(--gray);
-    border-radius: 8px;
-    font-size: 15px;
-    font-family: inherit;
-    transition: var(--transition);
-    background: var(--light);
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 98, 51, 0.1);
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-    color: var(--dark-gray);
-    opacity: 0.6;
-}
-
-/* Sélecteur de couleur */
-.color-picker {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.form-color {
-    width: 50px;
-    height: 50px;
-    border: 2px solid var(--gray);
-    border-radius: 8px;
-    cursor: pointer;
-    padding: 3px;
-    background: var(--light);
-}
-
-.form-color:hover {
-    border-color: var(--primary);
-}
-
-.color-value {
-    font-size: 14px;
-    color: var(--dark-gray);
-}
-
-/* Textarea */
-.form-textarea {
-    resize: vertical;
-    min-height: 120px;
-    max-height: 300px;
-}
-
-/* Checkbox */
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-    background: var(--light-gray);
-    border-radius: 8px;
-    border: 1px solid var(--gray);
-}
-
-.form-checkbox {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    accent-color: var(--primary);
-}
-
-.checkbox-label {
-    margin: 0;
-    font-weight: 500;
-    cursor: pointer;
-    color: var(--dark);
-}
-
-/* Boutons du formulaire (Consigne 7) */
+/* Conteneur des boutons du formulaire */
 .form-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-    padding-top: 30px;
-    border-top: 1px solid var(--gray);
+    display: flex;                       /* Flexbox pour aligner les boutons */
+    gap: 20px;                           /* Espace important entre les boutons */
+    justify-content: center;             /* Centre les boutons horizontalement */
+    margin-top: 40px;                    /* Grande marge en haut */
+    padding-top: 30px;                   /* Padding en haut */
+    border-top: 1px solid #eaeaea;       /* Ligne de séparation fine en haut */
 }
 
+/* Style de base commun aux deux boutons */
 .btn-reset,
 .btn-submit {
-    padding: 16px 32px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: var(--transition);
-    min-width: 200px;
+    display: inline-flex;                /* Flex en ligne pour aligner icône et texte */
+    align-items: center;                 /* Centre verticalement */
+    justify-content: center;             /* Centre horizontalement */
+    gap: 12px;                           /* Espace entre icône et texte */
+    padding: 16px 32px;                  /* Padding généreux */
+    border: none;                        /* Pas de bordure par défaut */
+    border-radius: 12px;                 /* Coins très arrondis */
+    font-size: 16px;                     /* Taille de police */
+    font-weight: 600;                    /* Texte semi-gras */
+    cursor: pointer;                     /* Curseur pointeur */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animation fluide avec courbe de Bézier */
+    min-width: 200px;                    /* Largeur minimale */
+    position: relative;                  /* Pour les effets superposés */
+    overflow: hidden;                    /* Cache le débordement des effets */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
-/* Bouton Reset - Style spécial */
+
+/* ============================================
+   BOUTON "EFFACER LE FORMULAIRE"
+   ============================================ */
 .btn-reset {
-    background: linear-gradient(135deg, var(--dark-gray), #495057);
-    color: var(--light);
-    border: 2px solid transparent;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Dégradé gris clair */
+    color: #6c757d;                      /* Texte gris foncé */
+    border: 2px solid #dee2e6;           /* Bordure grise */
 }
 
+/* Effet au survol du bouton reset */
 .btn-reset:hover {
-    background: linear-gradient(135deg, #495057, #343a40);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(108, 117, 125, 0.3);
-    border-color: var(--dark-gray);
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%); /* Dégradé gris plus foncé */
+    color: #495057;                      /* Texte gris plus foncé */
+    border-color: #adb5bd;               /* Bordure grise plus foncée */
+    transform: translateY(-2px);         /* Légère élévation */
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.2); /* Ombre grise prononcée */
 }
 
+/* Effet au clic (active) du bouton reset */
 .btn-reset:active {
-    transform: translateY(-1px);
+    transform: translateY(1px);          /* Retour à la position normale */
+    box-shadow: 0 2px 10px rgba(108, 117, 125, 0.1); /* Ombre plus légère */
 }
 
-/* Bouton Submit - Style spécial */
+
+/* ============================================
+   BOUTON "ENVOYER LE FORMULAIRE"
+   ============================================ */
 .btn-submit {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: var(--light);
-    border: 2px solid transparent;
+    background: linear-gradient(135deg, #006233 0%, #008044 100%); /* Dégradé vert algérien */
+    color: white;                        /* Texte blanc */
+    border: 2px solid #006233;           /* Bordure verte */
 }
 
+/* Effet au survol du bouton submit */
 .btn-submit:hover {
-    background: linear-gradient(135deg, var(--primary-dark), #003d1f);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 98, 51, 0.3);
-    border-color: var(--primary);
+    background: linear-gradient(135deg, #008044 0%, #00a055 100%); /* Dégradé vert plus clair */
+    border-color: #008044;               /* Bordure verte plus claire */
+    transform: translateY(-2px);         /* Légère élévation */
+    box-shadow: 0 6px 20px rgba(0, 98, 51, 0.3); /* Ombre verte prononcée */
 }
 
+/* Effet au clic (active) du bouton submit */
 .btn-submit:active {
-    transform: translateY(-1px);
-}
-
-.btn-icon {
-    font-size: 18px;
-}
-
-/* Message de validation */
-.validation-message {
-    display: none;
-    background: linear-gradient(135deg, #d4edda, #c3e6cb);
-    border: 2px solid #155724;
-    border-radius: 12px;
-    padding: 24px;
-    margin-top: 30px;
-    text-align: center;
-    animation: fadeIn 0.5s ease;
-}
-
-.validation-icon {
-    font-size: 48px;
-    color: #155724;
-    margin-bottom: 16px;
-}
-
-.validation-text h4 {
-    color: #155724;
-    margin-bottom: 8px;
-    font-size: 20px;
-}
-
-.validation-text p {
-    color: #0c4128;
-    opacity: 0.9;
-}
-
-/* Section contact info */
-.contact-info-section {
-    background: var(--light-gray);
-    border-radius: var(--border-radius);
-    padding: 40px;
-    margin-top: 40px;
-}
-
-.contact-methods {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 24px;
-    margin-top: 24px;
-}
-
-.contact-method {
-    background: var(--light);
-    border-radius: 12px;
-    padding: 24px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-}
-
-.contact-method:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.contact-icon {
-    font-size: 40px;
-    margin-bottom: 16px;
-}
-
-.contact-details h4 {
-    color: var(--primary-dark);
-    margin-bottom: 8px;
-}
-
-.contact-details p {
-    color: var(--dark);
-    font-weight: 500;
-    margin-bottom: 4px;
-}
-
-.contact-details small {
-    color: var(--dark-gray);
-    font-size: 13px;
-}
-
-/* Styles pour le tableau des statistiques */
-.trend {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.trend.up {
-    background: #d4edda;
-    color: #155724;
-}
-
-.trend.down {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-.trend.stable {
-    background: #fff3cd;
-    color: #856404;
-}
-
-.popularity-bar {
-    height: 8px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    border-radius: 4px;
-    transition: width 0.3s ease;
-}
-
-/* Responsive pour le formulaire */
-@media (max-width: 768px) {
-    .formulaire-section {
-        padding: 24px;
-    }
-    
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .form-buttons {
-        flex-direction: column;
-        gap: 16px;
-    }
-    
-    .btn-reset,
-    .btn-submit {
-        width: 100%;
-        min-width: auto;
-    }
-    
-    .contact-methods {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .formulaire-section {
-        padding: 16px;
-    }
-    
-    .form-input,
-    .form-select,
-    .form-textarea {
-        padding: 12px;
-    }
-    
-    .contact-method {
-        padding: 20px;
-    }
+    transform: translateY(1px);          /* Retour à la position normale */
+    box-shadow: 0 2px 10px rgba(0, 98, 51, 0.2); /* Ombre plus légère */
 }
 
 
-    .canvas-section {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            border: 1px solid #dee2e6;
-        }
-        
-        .canvas-wrapper {
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        #logoCanvas {
-            border: 3px solid #006233;
-            background: white;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        .controls {
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        .btn-canvas {
-            padding: 10px 20px;
-            margin: 5px;
-            background: #006233;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        
-        .btn-canvas:hover {
-            background: #004d29;
-        }
-        
-        .explanation {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #006233;
-        }
-        
-        .code-block {
-            background: #f1f3f5;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: monospace;
-            margin: 10px 0;
-            overflow-x: auto;
-            border-left: 3px solid #006233;
-        }
-        
-        .color-box {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin: 0 5px;
-            border: 1px solid #ccc;
-            vertical-align: middle;
-        }
-        
-        .step {
-            margin: 25px 0;
-            padding-bottom: 25px;
-            border-bottom: 1px dashed #dee2e6;
-        }
-        
-        .step:last-child {
-            border-bottom: none;
-        }
-        
-        .step-number {
-            background: #006233;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: inline-block;
-            text-align: center;
-            line-height: 30px;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        
-        .indent {
-            margin-left: 40px;
-        }
-        
-        .code-line {
-            display: block;
-            margin: 2px 0;
-        }
+/* ============================================
+   ANIMATION DE SUCCÈS APRÈS L'ENVOI
+   ============================================ */
+/* Classe ajoutée par JavaScript après l'envoi réussi */
+.btn-submit.sent {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%); /* Dégradé vert de succès */
+    border-color: #28a745;               /* Bordure verte de succès */
+    animation: successPulse 1.5s ease;   /* Animation de pulsation */
+}

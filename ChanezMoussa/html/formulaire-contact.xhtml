@@ -1,47 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Déclaration XML : version 1.0 avec encodage UTF-8 -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- Déclaration du type de document : XHTML 1.0 Strict selon les normes W3C -->
+
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<!-- Balise racine avec namespace XHTML, langue française spécifiée deux fois pour XML et HTML -->
+
 <head>
+    <!-- Section d'en-tête avec les métadonnées et ressources -->
     <meta charset="UTF-8" />
+    <!-- Définit l'encodage des caractères en UTF-8 -->
     <meta name="author" content="Chanez Dekimeche" />
+    <!-- Métadonnée indiquant l'auteur du site -->
     <meta name="description" content="Formulaire de contact - Sport Algérien" />
+    <!-- Description du site pour les moteurs de recherche -->
     
     <title>Formulaire de Contact | Sport Algérien</title>
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
     
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <!-- Lien vers la feuille de style CSS externe avec type MIME spécifié -->
 </head>
+
 <body>
+    <!-- Corps du document - contenu visible de la page -->
+    
+    <!-- En-tête du site (identique aux autres pages) -->
     <div class="site-header">
         <div class="container">
+            <!-- Conteneur pour centrer et limiter la largeur -->
             <div class="header-wrapper">
+                <!-- Logo et nom du site -->
                 <a href="index.html" class="brand">
                     <div class="brand-logo">SA</div>
+                    <!-- Initiales du site -->
                     <div class="brand-name">Sport<span>Algérien</span></div>
+                    <!-- Nom complet avec partie mise en évidence -->
                 </a>
 
                 <!-- Navigation principale -->
                 <div class="primary-nav">
+                    <!-- Note : Dans XHTML, on utilise div au lieu de nav pour une compatibilité maximale -->
+                    
+                    <!-- Bouton pour la page d'accueil -->
                     <button class="nav-btn" onclick="window.location.href='index.html';">
                         <span class="btn-text">Accueil</span>
                     </button>
                     
+                    <!-- Bouton pour la page football -->
                     <button class="nav-btn" onclick="window.location.href='football.xhtml';">
                         <span class="btn-text">Football</span>
                     </button>
                     
+                    <!-- Bouton pour la page autres sports -->
                     <button class="nav-btn" onclick="window.location.href='autres-sports.xhtml';">
                         <span class="btn-text">Autres Sports</span>
                     </button>
                     
+                    <!-- Bouton pour la page athlètes -->
                     <button class="nav-btn" onclick="window.location.href='athletes.xhtml';">
                         <span class="btn-text">Athlètes</span>
                     </button>
                     
+                    <!-- Bouton pour la page formulaire (actif car on est sur cette page) -->
                     <button class="nav-btn active" onclick="window.location.href='formulaire-contact.xhtml';">
                         <span class="btn-text">Formulaire</span>
                     </button>
                     
+                    <!-- Bouton pour la page canvas -->
                     <button class="nav-btn" onclick="window.location.href='canvas.xhtml';">
                         <span class="btn-text">Canvas</span>
                     </button>
@@ -51,17 +79,23 @@
     </div>
 
 
+    <!-- Contenu principal de la page -->
     <div class="main-content">
         <div class="container">
             <!-- Section formulaire (Consigne 4 et 7) -->
+            <!-- Consigne 4 : Au moins 2 parties par page (formulaire + tableau) -->
+            <!-- Consigne 7 : Formulaire avec tous les types de champs demandés -->
             <div class="presentation fade-in" id="sommaire">
+                <!-- Animation fade-in pour l'apparition progressive -->
                 <div class="section-intro">
                     <h2>Formulaire de Contact</h2>
+                    <!-- Titre principal de la section -->
                     <p>
                         Remplissez ce formulaire pour nous contacter, poser vos questions 
                         ou vous inscrire à notre newsletter sportive. Tous les champs marqués 
                         d'un astérisque (*) sont obligatoires.
                     </p>
+                    <!-- Description et instructions pour l'utilisateur -->
                 </div>
 
                 <!-- Formulaire principal (Consigne 7) -->
@@ -71,19 +105,38 @@
                         <p>Recevez les dernières actualités du sport algérien</p>
                     </div>
 
+                    <!-- Formulaire HTML avec validation JavaScript -->
                     <form id="contactForm" action="#" method="post" onsubmit="return validateForm();">
+                        <!-- 
+                            action="#" : L'action est définie ici, mais serait normalement une URL de traitement
+                            method="post" : Méthode HTTP pour envoyer les données
+                            onsubmit : Appelle la fonction JavaScript validateForm() lors de la soumission
+                        -->
                         <div class="form-grid">
+                            <!-- Grille pour organiser les champs du formulaire -->
+
                             <!-- Ligne 1 : Nom et Email -->
                             <div class="form-group">
+                                <!-- Groupe de champ : Nom complet -->
                                 <label for="nom">Nom complet *</label>
+                                <!-- Étiquette du champ avec "for" lié à l'id du input -->
                                 <input type="text" id="nom" name="nom" placeholder="Votre nom et prénom" 
                                        required="required" class="form-input" />
+                                <!-- 
+                                    type="text" : Champ texte
+                                    id="nom" : Identifiant unique pour le JavaScript et CSS
+                                    name="nom" : Nom envoyé au serveur
+                                    placeholder : Texte indicatif
+                                    required="required" : Champ obligatoire (XHTML syntax)
+                                    class="form-input" : Classe CSS pour le style
+                                -->
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Adresse email *</label>
                                 <input type="email" id="email" name="email" placeholder="exemple@email.com" 
                                        required="required" class="form-input" />
+                                <!-- type="email" : Champ spécifique pour les adresses email avec validation navigateur -->
                             </div>
 
                             <!-- Ligne 2 : Téléphone et Date -->
@@ -92,18 +145,25 @@
                                 <input type="tel" id="telephone" name="telephone" 
                                        placeholder="06 12 34 56 78" pattern="[0-9]{10}" 
                                        class="form-input" />
+                                <!-- 
+                                    type="tel" : Champ pour numéro de téléphone
+                                    pattern="[0-9]{10}" : Expression régulière pour 10 chiffres
+                                -->
                             </div>
 
                             <div class="form-group">
                                 <label for="date">Date de naissance</label>
                                 <input type="date" id="date" name="date" class="form-input" />
+                                <!-- type="date" : Sélecteur de date intégré au navigateur -->
                             </div>
 
                             <!-- Ligne 3 : Sport et Couleur -->
                             <div class="form-group">
                                 <label for="sport">Sport préféré *</label>
                                 <select id="sport" name="sport" required="required" class="form-select">
+                                    <!-- Menu déroulant avec options -->
                                     <option value="">Choisissez un sport</option>
+                                    <!-- Option par défaut vide -->
                                     <option value="football">Football</option>
                                     <option value="athletisme">Athlétisme</option>
                                     <option value="handball">Handball</option>
@@ -116,25 +176,38 @@
                             <div class="form-group">
                                 <label for="couleur">Couleur préférée</label>
                                 <div class="color-picker">
+                                    <!-- Conteneur pour le sélecteur de couleur -->
                                     <input type="color" id="couleur" name="couleur" value="#006233" 
                                            class="form-color" />
+                                    <!-- type="color" : Sélecteur de couleur intégré au navigateur -->
                                     <span class="color-value">Vert algérien</span>
+                                    <!-- Texte descriptif de la couleur par défaut -->
                                 </div>
                             </div>
 
                             <!-- Ligne 4 : Message (pleine largeur) -->
                             <div class="form-group full-width">
+                                <!-- full-width : Classe pour occuper toute la largeur de la grille -->
                                 <label for="message">Votre message</label>
                                 <textarea id="message" name="message" rows="4" 
                                           placeholder="Partagez vos commentaires, suggestions ou questions..."
                                           class="form-textarea"></textarea>
+                                <!-- 
+                                    textarea : Champ de texte multiligne
+                                    rows="4" : Nombre de lignes visibles par défaut
+                                -->
                             </div>
 
                             <!-- Ligne 5 : Checkbox -->
                             <div class="form-group full-width">
                                 <div class="checkbox-group">
+                                    <!-- Groupe pour checkbox et son label -->
                                     <input type="checkbox" id="newsletter" name="newsletter" 
                                            checked="checked" class="form-checkbox" />
+                                    <!-- 
+                                        type="checkbox" : Case à cocher
+                                        checked="checked" : Coché par défaut
+                                    -->
                                     <label for="newsletter" class="checkbox-label">
                                         Je souhaite recevoir la newsletter mensuelle du sport algérien
                                     </label>
@@ -143,24 +216,31 @@
 
                             <!-- Ligne 6 : Boutons (Consigne 7) -->
                             <div class="form-group full-width form-buttons">
+                                <!-- Conteneur pour les boutons du formulaire -->
+                                
                                 <!-- Bouton Reset avec style spécial -->
                                 <button type="reset" class="btn-reset">
+                                    <!-- type="reset" : Réinitialise tous les champs du formulaire -->
                                     <span class="btn-icon">↻</span>
+                                    <!-- Icône de réinitialisation -->
                                     <span class="btn-text">Effacer le formulaire</span>
                                 </button>
                                 
                                 <!-- Bouton Submit avec style spécial -->
                                 <button type="submit" class="btn-submit">
+                                    <!-- type="submit" : Soumet le formulaire -->
                                     <span class="btn-icon">✓</span>
+                                    <!-- Icône de validation -->
                                     <span class="btn-text">Envoyer le formulaire</span>
                                 </button>
                             </div>
                         </div>
                     </form>
 
-                    <!-- Message de validation -->
+                    <!-- Message de validation (caché par défaut, affiché par JavaScript) -->
                     <div id="messageValidation" class="validation-message">
                         <div class="validation-icon">✓</div>
+                        <!-- Icône de succès -->
                         <div class="validation-text">
                             <h4>Formulaire envoyé avec succès !</h4>
                             <p>Merci pour votre message. Nous vous répondrons dans les plus brefs délais.</p>
@@ -170,6 +250,7 @@
             </div>
 
             <!-- Section tableau des statistiques (Consigne 11) -->
+            <!-- Consigne 11 : Tableau de données -->
             <div class="medals-section fade-in">
                 <div class="section-header">
                     <h3>Statistiques des Inscriptions</h3>
@@ -177,8 +258,10 @@
                 </div>
 
                 <div class="table-container">
+                    <!-- Conteneur pour le tableau avec défilement si nécessaire -->
                     <table class="medals-table">
                         <thead>
+                            <!-- En-tête du tableau -->
                             <tr>
                                 <th>Sport</th>
                                 <th>Pourcentage</th>
@@ -188,12 +271,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Corps du tableau avec les données -->
                             <tr>
                                 <td>Football</td>
                                 <td>45%</td>
                                 <td>1,250</td>
                                 <td><span class="trend up">↑ En hausse</span></td>
+                                <!-- Indicateur de tendance avec classe CSS -->
                                 <td><div class="popularity-bar" style="width: 90%;"></div></td>
+                                <!-- Barre de progression visuelle -->
                             </tr>
                             <tr>
                                 <td>Athlétisme</td>
@@ -236,20 +322,25 @@
             </div>
 
             <!-- Affichage heure (Consigne 13) -->
+            <!-- Consigne 13 : Affichage de l'heure mise à jour par JavaScript -->
             <div class="time-display fade-in" id="timeDisplay">
                 <div class="time-container">
                     <div class="time-content">
                         <div class="time-label">Date et heure actuelles</div>
+                        <!-- Libellé statique -->
                         <div class="time-value" id="currentTime">Chargement de l'heure...</div>
+                        <!-- Div qui sera rempli dynamiquement par JavaScript -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Pied de page du site -->
     <div class="site-footer">
         <div class="container">
             <div class="footer-grid">
+                <!-- Grille à 3 colonnes pour l'organisation du footer -->
                 <div class="footer-column">
                     <div class="footer-brand">
                         <div class="footer-logo">SA</div>
@@ -267,6 +358,7 @@
                 <div class="footer-column">
                     <h4 class="footer-heading">Navigation</h4>
                     <div class="footer-nav-links">
+                        <!-- Liens de navigation dans le footer -->
                         <a href="index.html" class="footer-link">
                             <span>Accueil</span>
                         </a>
@@ -290,11 +382,13 @@
 
                 <div class="footer-column">
                     <h4 class="footer-heading">Contact &amp; Infos</h4>
+                    <!-- &amp; : Encodage HTML pour le caractère & -->
                     <div class="contact-info">
                         <a href="formulaire-contact.xhtml" class="contact-link">
                             <span>Formulaire de contact</span>
                         </a>
                         <a href="mailto:contact@sport-algerien.dz" class="contact-link">
+                            <!-- mailto : Lien pour ouvrir le client email -->
                             <span>contact@sport-algerien.dz</span>
                         </a>
                         <div class="contact-item">
@@ -308,37 +402,40 @@
             </div>
 
             <!-- Navigation entre pages (Consigne 8) -->
+            <!-- Consigne 8 : Navigation entre les différentes pages du site -->
             <div class="page-navigation">
+                <!-- Bouton pour aller à la page précédente -->
                 <button class="nav-prev" onclick="goToPreviousPage();">
                     <span class="nav-icon">←</span>
                     <span class="nav-text">Page précédente</span>
                 </button>
                 
+                <!-- Lien pour remonter en haut de la page -->
                 <a href="#" class="nav-top">
+                    <!-- href="#" : Ancre vers le haut de la page -->
                     <span class="nav-icon">↑</span>
                     <span class="nav-text">Haut de page</span>
                 </a>
                 
+                <!-- Bouton pour aller à la page suivante -->
                 <button class="nav-next" onclick="goToNextPage();">
                     <span class="nav-text">Page suivante</span>
                     <span class="nav-icon">→</span>
                 </button>
             </div>
 
-            <!-- Footer bottom -->
+            <!-- Footer bottom : copyright et mentions légales -->
             <div class="footer-bottom">
                 <div class="copyright">
                     <p>© 2025 Chanez Zouina Dekimeche - Projet Web L1 - Tous droits réservés</p>
-                    <div class="validation-badges">
-                        <span class="badge">✓ Formulaire Validé</span>
-                        <span class="badge">✓ CSS Level 3</span>
-                        <span class="badge">✓ Accessibilité</span>
-                    </div>
+                    <!-- Mention de copyright avec année, auteur et contexte académique -->
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Inclusion du fichier JavaScript externe -->
+    <!-- Le script est placé en bas du body pour optimiser le chargement de la page -->
     <script src="../js/script.js"></script>
 </body>
 </html>

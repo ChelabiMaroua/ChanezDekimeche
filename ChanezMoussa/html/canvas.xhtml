@@ -1,47 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Déclaration XML : version 1.0 avec encodage UTF-8 pour support des caractères français -->
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- 
+    Déclaration du type de document : XHTML 1.0 Strict
+    DTD (Document Type Definition) définie par le W3C
+    Version stricte qui exige un code plus propre et bien formé
+-->
+
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<!-- 
+    Balise racine avec :
+    - xmlns : namespace XML pour XHTML
+    - lang="fr" : attribut HTML pour la langue
+    - xml:lang="fr" : attribut XML pour la langue (doublon nécessaire en XHTML)
+-->
+
 <head>
+    <!-- Section d'en-tête : contient les métadonnées et liens vers les ressources -->
     <meta charset="UTF-8" />
+    <!-- Définit l'encodage des caractères en UTF-8 (obligatoire en XHTML avec / de fermeture) -->
+    
     <meta name="author" content="Chanez Dekimeche" />
+    <!-- Métadonnée indiquant l'auteur du site -->
+    
     <meta name="description" content="Page Canvas - Logo Sport Algérien" />
+    <!-- Description du contenu de la page pour les moteurs de recherche -->
     
     <title>Canvas Logo | Sport Algérien</title>
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
     
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <!-- 
+        Lien vers la feuille de style CSS externe
+        type="text/css" : type MIME obligatoire en XHTML
+        ../css/style.css : chemin relatif vers le fichier CSS
+    -->
 </head>
+
 <body>
+    <!-- Corps du document : contenu visible de la page -->
+    
+    <!-- En-tête du site (identique aux autres pages pour la cohérence) -->
     <div class="site-header">
+        <!-- Conteneur principal de l'en-tête -->
         <div class="container">
+            <!-- Conteneur pour limiter la largeur et centrer le contenu -->
             <div class="header-wrapper">
+                <!-- Wrapper pour organiser le contenu de l'en-tête -->
+                
+                <!-- Logo et nom du site -->
                 <a href="index.html" class="brand">
+                    <!-- Lien vers la page d'accueil avec le logo comme contenu -->
                     <div class="brand-logo">SA</div>
+                    <!-- Logo abrégé "SA" (Sport Algérien) -->
                     <div class="brand-name">Sport<span>Algérien</span></div>
+                    <!-- 
+                        Nom complet du site
+                        <span>Algérien</span> : partie mise en évidence avec style différent
+                    -->
                 </a>
 
+                <!-- Navigation principale -->
                 <div class="primary-nav">
+                    <!-- Conteneur pour les boutons de navigation -->
+                    
+                    <!-- Bouton pour la page d'accueil -->
                     <button class="nav-btn" onclick="window.location.href='index.html';">
+                        <!-- 
+                            Bouton avec événement onclick pour la redirection
+                            Note: En XHTML, on doit utiliser ; à la fin de l'instruction JavaScript
+                        -->
                         <span class="btn-text">Accueil</span>
+                        <!-- Texte du bouton dans un span pour le style -->
                     </button>
                     
+                    <!-- Bouton pour la page football -->
                     <button class="nav-btn" onclick="window.location.href='football.xhtml';">
                         <span class="btn-text">Football</span>
                     </button>
                     
+                    <!-- Bouton pour la page autres sports -->
                     <button class="nav-btn" onclick="window.location.href='autres-sports.xhtml';">
                         <span class="btn-text">Autres Sports</span>
                     </button>
                     
+                    <!-- Bouton pour la page athlètes -->
                     <button class="nav-btn" onclick="window.location.href='athletes.xhtml';">
                         <span class="btn-text">Athlètes</span>
                     </button>
                     
+                    <!-- Bouton pour la page formulaire -->
                     <button class="nav-btn" onclick="window.location.href='formulaire-contact.xhtml';">
                         <span class="btn-text">Formulaire</span>
                     </button>
                     
+                    <!-- Bouton pour la page canvas (ACTIF - page courante) -->
                     <button class="nav-btn active" onclick="window.location.href='canvas.xhtml';">
+                        <!-- 
+                            Classe "active" ajoutée pour indiquer la page courante
+                            Style différent appliqué via CSS
+                        -->
                         <span class="btn-text">Canvas</span>
                     </button>
                 </div>
@@ -49,56 +109,102 @@
         </div>
     </div>
 
+    <!-- Contenu principal de la page -->
     <div class="main-content">
         <div class="container">
+            <!-- Section de présentation générale -->
             <div class="presentation fade-in">
+                <!-- 
+                    Classe "fade-in" : animation d'apparition progressive
+                    Appliquée via CSS ou JavaScript
+                -->
                 <div class="section-intro">
+                    <!-- Introduction de la section -->
                     <h2>Canvas - Logo Sport Algérien</h2>
+                    <!-- Titre principal de la page -->
                     <p>
                         Cette page présente un logo créé avec l'élément HTML5 Canvas.
                         Découvrez les étapes de construction et les fonctions JavaScript utilisées.
                     </p>
+                    <!-- Description du contenu de la page -->
                 </div>
 
-                <!-- Canvas Section -->
+                <!-- Section Canvas (partie principale) -->
                 <div class="canvas-section fade-in">
                     <div class="section-header">
+                        <!-- En-tête de la section Canvas -->
                         <h3>Logo "Sport Algérien"</h3>
+                        <!-- Titre de la section -->
                         <p>Représentation graphique des valeurs sportives</p>
+                        <!-- Sous-titre descriptif -->
                     </div>
 
+                    <!-- Zone du Canvas -->
                     <div class="canvas-wrapper">
+                        <!-- Wrapper pour le canvas (pour le style et positionnement) -->
                         <canvas id="logoCanvas" width="400" height="300">
+                            <!-- 
+                                Élément HTML5 Canvas pour le dessin vectoriel
+                                Attributs :
+                                - id="logoCanvas" : identifiant unique pour le JavaScript
+                                - width="400" : largeur en pixels
+                                - height="300" : hauteur en pixels
+                                
+                                Contenu de secours : affiché si le navigateur ne supporte pas Canvas
+                            -->
                             Votre navigateur ne supporte pas l'élément Canvas.
                             Utilisez Firefox, Chrome ou Opera pour voir ce contenu.
                         </canvas>
-                        
+                        <!-- Le dessin sera effectué par JavaScript (fonction drawLogo()) -->
                     </div>
 
+                    <!-- Palette de couleurs utilisée -->
                     <div style="text-align: center; margin-top: 15px;">
+                        <!-- 
+                            Style inline pour centrer et ajouter un espacement
+                            Note: En XHTML, le CSS inline est autorisé
+                        -->
                         <h4>Palette de couleurs :</h4>
+                        <!-- Titre de la palette -->
+                        
+                        <!-- Affichage de chaque couleur avec son nom -->
                         <span class="color-box" style="background: #006233;"></span> Vert algérien (#006233)
+                        <!-- 
+                            <span> avec classe "color-box" pour le style des carrés de couleur
+                            style="background: #006233;" : couleur de fond définie en ligne
+                        -->
+                        
                         <span class="color-box" style="background: #FFFFFF; border: 2px solid #ccc;"></span> Blanc (#FFFFFF)
+                        <!-- Note: border ajouté pour le blanc qui serait invisible sur fond blanc -->
+                        
                         <span class="color-box" style="background: #DA251D;"></span> Rouge (#DA251D)
                         <span class="color-box" style="background: #FFD700;"></span> Or (#FFD700)
                         <span class="color-box" style="background: #228B22;"></span> Vert laurier (#228B22)
                     </div>
                 </div>
 
-                <!-- Explication de construction -->
+                <!-- Section d'explication de la construction -->
                 <div class="explanation fade-in">
                     <div class="section-header">
                         <h3>Explication de la Construction</h3>
                         <p>Étapes détaillées de création du logo</p>
                     </div>
 
+                    <!-- Étape 1 : Initialisation -->
                     <div class="step">
+                        <!-- Conteneur d'une étape -->
                         <div class="step-number">1</div>
+                        <!-- Numéro de l'étape -->
                         <span style="font-weight: bold; color: #006233;">Initialisation du Canvas</span>
+                        <!-- Titre de l'étape avec style en ligne -->
                         <div class="indent">
+                            <!-- Contenu indenté pour la mise en page -->
                             <p>Création du contexte 2D et définition des dimensions.</p>
+                            <!-- Description de l'étape -->
                             <div class="code-block">
+                                <!-- Bloc pour afficher du code -->
                                 <span class="code-line">var canvas = document.getElementById('logoCanvas');</span>
+                                <!-- Ligne de code dans un span pour le style -->
                                 <span class="code-line">var ctx = canvas.getContext('2d');</span>
                                 <span class="code-line">canvas.width = 400;</span>
                                 <span class="code-line">canvas.height = 300;</span>
@@ -106,6 +212,7 @@
                         </div>
                     </div>
 
+                    <!-- Étape 2 : Fond avec dégradé -->
                     <div class="step">
                         <div class="step-number">2</div>
                         <span style="font-weight: bold; color: #006233;">Fond avec dégradé</span>
@@ -121,19 +228,31 @@
                         </div>
                     </div>
 
+                    <!-- Étape 3 : Cercles concentriques -->
                     <div class="step">
                         <div class="step-number">3</div>
                         <span style="font-weight: bold; color: #006233;">Cercles concentriques</span>
                         <div class="indent">
                             <p>Dessin de trois cercles pour l'effet "cible".</p>
                             <div class="code-block">
+                                <!-- Commentaire dans le code -->
                                 <span class="code-line">// Cercle extérieur blanc</span>
                                 <span class="code-line">ctx.beginPath();</span>
+                                <!-- Début d'un nouveau tracé -->
                                 <span class="code-line">ctx.arc(200, 150, 80, 0, Math.PI * 2);</span>
+                                <!-- 
+                                    Dessin d'un arc (cercle complet)
+                                    Paramètres : centreX, centreY, rayon, angleDébut, angleFin
+                                    Math.PI * 2 = 360 degrés (cercle complet)
+                                -->
                                 <span class="code-line">ctx.strokeStyle = '#FFFFFF';</span>
+                                <!-- Couleur du contour -->
                                 <span class="code-line">ctx.lineWidth = 3;</span>
+                                <!-- Épaisseur du trait -->
                                 <span class="code-line">ctx.stroke();</span>
+                                <!-- Dessine le contour -->
                                 <span class="code-line"></span>
+                                <!-- Ligne vide pour l'espacement -->
                                 <span class="code-line">// Cercle moyen rouge</span>
                                 <span class="code-line">ctx.beginPath();</span>
                                 <span class="code-line">ctx.arc(200, 150, 60, 0, Math.PI * 2);</span>
@@ -151,6 +270,7 @@
                         </div>
                     </div>
 
+                    <!-- Étape 4 : Étoile centrale -->
                     <div class="step">
                         <div class="step-number">4</div>
                         <span style="font-weight: bold; color: #006233;">Étoile centrale dorée</span>
@@ -158,27 +278,58 @@
                             <p>Dessin d'une étoile à 5 branches avec la fonction drawFivePointedStar().</p>
                             <div class="code-block">
                                 <span class="code-line">function drawFivePointedStar(ctx, cx, cy, outerRadius, innerRadius) {</span>
+                                <!-- 
+                                    Définition de fonction
+                                    Paramètres : contexte, centreX, centreY, rayonExt, rayonInt
+                                -->
                                 <span class="code-line">  ctx.beginPath();</span>
                                 <span class="code-line">  var angle = Math.PI / 2;</span>
+                                <!-- Angle initial : 90° (point vers le haut) -->
                                 <span class="code-line">  var angleStep = Math.PI / 5;</span>
+                                <!-- Pas d'angle : 36° (360° / 10 points) -->
                                 <span class="code-line">  for (var i = 0; i &lt; 10; i++) {</span>
+                                <!-- 
+                                    10 points (5 pointes extérieures + 5 intérieures)
+                                    &lt; : entité HTML pour < (obligatoire en XHTML)
+                                -->
                                 <span class="code-line">    var radius = (i % 2 === 0) ? outerRadius : innerRadius;</span>
+                                <!-- 
+                                    Condition ternaire : alterne entre rayon extérieur et intérieur
+                                    % : opérateur modulo (reste de la division)
+                                -->
                                 <span class="code-line">    var x = cx + Math.cos(angle) * radius;</span>
+                                <!-- 
+                                    Calcul de la coordonnée X
+                                    Math.cos : cosinus de l'angle
+                                -->
                                 <span class="code-line">    var y = cy - Math.sin(angle) * radius;</span>
+                                <!-- 
+                                    Calcul de la coordonnée Y
+                                    Math.sin : sinus de l'angle
+                                    - : car l'axe Y est inversé en Canvas
+                                -->
                                 <span class="code-line">    if (i === 0) ctx.moveTo(x, y);</span>
+                                <!-- Premier point : positionne le "crayon" -->
                                 <span class="code-line">    else ctx.lineTo(x, y);</span>
+                                <!-- Points suivants : trace une ligne -->
                                 <span class="code-line">    angle += angleStep;</span>
+                                <!-- Incrémente l'angle -->
                                 <span class="code-line">  }</span>
                                 <span class="code-line">  ctx.closePath();</span>
+                                <!-- Rejoint le dernier point au premier -->
                                 <span class="code-line">}</span>
                                 <span class="code-line"></span>
                                 <span class="code-line">drawFivePointedStar(ctx, 200, 150, 30, 15);</span>
+                                <!-- Appel de la fonction avec les paramètres -->
                                 <span class="code-line">ctx.fillStyle = '#FFD700';</span>
+                                <!-- Couleur de remplissage or -->
                                 <span class="code-line">ctx.fill();</span>
+                                <!-- Remplit l'étoile -->
                             </div>
                         </div>
                     </div>
 
+                    <!-- Étape 5 : Silhouette de coureur -->
                     <div class="step">
                         <div class="step-number">5</div>
                         <span style="font-weight: bold; color: #006233;">Silhouette de coureur</span>
@@ -188,10 +339,14 @@
                                 <span class="code-line">ctx.beginPath();</span>
                                 <span class="code-line">// Tête</span>
                                 <span class="code-line">ctx.arc(200, 90, 8, 0, Math.PI * 2);</span>
+                                <!-- Cercle pour la tête -->
                                 <span class="code-line">// Corps</span>
                                 <span class="code-line">ctx.moveTo(200, 98);</span>
+                                <!-- Déplace le "crayon" au début du corps -->
                                 <span class="code-line">ctx.lineTo(200, 130);</span>
+                                <!-- Trace une ligne verticale pour le corps -->
                                 <span class="code-line">// Bras et jambes...</span>
+                                <!-- Commentaire pour code abrégé -->
                                 <span class="code-line">ctx.strokeStyle = '#FFFFFF';</span>
                                 <span class="code-line">ctx.lineWidth = 3;</span>
                                 <span class="code-line">ctx.stroke();</span>
@@ -199,6 +354,7 @@
                         </div>
                     </div>
 
+                    <!-- Étape 6 : Couronne de laurier -->
                     <div class="step">
                         <div class="step-number">6</div>
                         <span style="font-weight: bold; color: #006233;">Couronne de laurier</span>
@@ -207,16 +363,22 @@
                             <div class="code-block">
                                 <span class="code-line">function drawLaurelWreath(ctx, cx, cy, diameter) {</span>
                                 <span class="code-line">  var radius = diameter / 2;</span>
+                                <!-- Rayon à partir du diamètre -->
                                 <span class="code-line">  var leafCount = 12;</span>
+                                <!-- Nombre de feuilles -->
                                 <span class="code-line">  for (var i = 0; i &lt; leafCount; i++) {</span>
+                                <!-- Boucle pour chaque feuille -->
                                 <span class="code-line">    // Dessin de chaque feuille...</span>
+                                <!-- Code abrégé pour l'affichage -->
                                 <span class="code-line">  }</span>
                                 <span class="code-line">}</span>
                                 <span class="code-line">drawLaurelWreath(ctx, 200, 150, 100);</span>
+                                <!-- Appel de la fonction -->
                             </div>
                         </div>
                     </div>
 
+                    <!-- Étape 7 : Texte final -->
                     <div class="step">
                         <div class="step-number">7</div>
                         <span style="font-weight: bold; color: #006233;">Texte final</span>
@@ -224,14 +386,30 @@
                             <p>Ajout du texte avec effets visuels.</p>
                             <div class="code-block">
                                 <span class="code-line">ctx.font = 'bold 24px "Arial Black", Arial, sans-serif';</span>
+                                <!-- 
+                                    Définition de la police
+                                    Format : style poids taille famille
+                                    Familles de secours spécifiées
+                                -->
                                 <span class="code-line">ctx.fillStyle = '#FFFFFF';</span>
+                                <!-- Couleur du texte -->
                                 <span class="code-line">ctx.textAlign = 'center';</span>
+                                <!-- Alignement horizontal centré -->
                                 <span class="code-line">ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';</span>
+                                <!-- Couleur de l'ombre avec transparence -->
                                 <span class="code-line">ctx.shadowBlur = 5;</span>
+                                <!-- Flou de l'ombre -->
                                 <span class="code-line">ctx.shadowOffsetX = 2;</span>
+                                <!-- Décalage horizontal de l'ombre -->
                                 <span class="code-line">ctx.shadowOffsetY = 2;</span>
+                                <!-- Décalage vertical de l'ombre -->
                                 <span class="code-line">ctx.fillText('SPORT', 200, 220);</span>
+                                <!-- 
+                                    Dessine le texte "SPORT"
+                                    Paramètres : texte, positionX, positionY
+                                -->
                                 <span class="code-line">ctx.fillText('ALGÉRIEN', 200, 250);</span>
+                                <!-- Deuxième ligne de texte -->
                             </div>
                         </div>
                     </div>
@@ -240,21 +418,40 @@
         </div>
     </div>
 
+    <!-- Inclusion du fichier JavaScript principal -->
     <script src="../js/script.js"></script>
+    <!-- 
+        Lien vers le fichier JavaScript externe
+        Contient les fonctions drawLogo(), updateTime(), etc.
+    -->
+
+    <!-- Script inline pour l'initialisation de cette page -->
     <script>
         // Initialisation au chargement de la page
+        // Note: En XHTML, le contenu des balises script doit être dans un CDATA ou échappé
+        // Ici, on utilise un commentaire pour éviter les problèmes
+        //<![CDATA[
         window.onload = function() {
             // Dessiner le logo immédiatement
             if (typeof drawLogo === 'function') {
-                drawLogo();
+                // Vérifie que la fonction drawLogo existe
+                drawLogo(); // Appelle la fonction de dessin
             }
             
-            // Initialiser l'heure
+            // Initialiser l'heure (fonctionnalité commune à toutes les pages)
             if (typeof updateTime === 'function') {
-                updateTime();
-                setInterval(updateTime, 1000);
+                updateTime(); // Met à jour l'heure immédiatement
+                setInterval(updateTime, 1000); // Met à jour toutes les secondes
             }
         };
+        //]]>
     </script>
+    <!-- 
+        Notes sur le script :
+        1. window.onload : se déclenche quand toute la page est chargée
+        2. typeof vérifie que les fonctions existent avant de les appeler
+        3. setInterval(updateTime, 1000) : appelle updateTime toutes les 1000ms (1s)
+        4. CDATA wrapper : nécessaire en XHTML pour éviter les erreurs de parsing
+    -->
 </body>
 </html>
